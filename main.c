@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int ft_isalnum(int c);
+int ft_isascii(int c);
+int ft_isprint(int c);
+int ft_toupper(int c);
+int ft_tolower(int c);
+size_t ft_strlen(const char *s);
+size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
+int ft_atoi(const char *nptr);
+
+int	main(void)
+{
+	printf("---------ft_isalpha----------\n");
+	printf("ft_isalpha('a') = %d | isalpha ('a') = %d\n", ft_isalpha('a'), isalpha('a'));
+	printf("ft_isalpha('Z') = %d | isalpha ('Z') = %d\n", ft_isalpha('Z'), isalpha('Z'));
+	printf("ft_isalpha('1') = %d | isalpha ('1') = %d\n", ft_isalpha('1'), isalpha('1'));
+	printf("ft_isalpha(' ') = %d | isalpha (' ') = %d\n", ft_isalpha(' '), isalpha(' '));
+	printf("ft_isalpha('@') = %d | isalpha ('@') = %d\n", ft_isalpha('@'), isalpha('@'));
+	printf("ft_isalpha('EOF') = %d | isalpha ('EOF') = %d\n", ft_isalpha(EOF), isalpha(EOF));
+
+	printf("---------ft_isdigit-----------\n");
+	printf("ft_isdigit('a') = %d | isdigit ('a') = %d\n", ft_isdigit('a'), isdigit('a'));
+	printf("ft_isdigit('Z') = %d | isdigit ('Z') = %d\n", ft_isdigit('Z'), isdigit('Z'));
+	printf("ft_isdigit('1') = %d | isdigit ('1') = %d\n", ft_isdigit('1'), isdigit('1'));
+	printf("ft_isdigit(' ') = %d | isdigit (' ') = %d\n", ft_isdigit(' '), isdigit(' '));
+	printf("ft_isdigit('@') = %d | isdigit ('@') = %d\n", ft_isdigit('@'), isdigit('@'));
+	printf("ft_isdigit('EOF') = %d | isdigit ('EOF') = %d\n", ft_isdigit(EOF), isdigit(EOF));
+	
+
+	printf("---------ft_isalnum-----------\n");
+	printf("ft_isalnum('a') = %d | isalnum ('a') = %d\n", ft_isalnum('a'), isalnum('a'));
+	printf("ft_isalnum('Z') = %d | isalnum ('Z') = %d\n", ft_isalnum('Z'), isalnum('Z'));
+	printf("ft_isalnum('1') = %d | isalnum ('1') = %d\n", ft_isalnum('1'), isalnum('1'));
+	printf("ft_isalnum(' ') = %d | isalnum (' ') = %d\n", ft_isalnum(' '), isalnum(' '));
+	printf("ft_isalnum('@') = %d | isalnum ('@') = %d\n", ft_isalnum('@'), isalnum('@'));
+	printf("ft_isalnum('EOF') = %d | isalnum ('EOF') = %d\n", ft_isalnum(EOF), isalnum(EOF));
+
+	printf("---------ft_isascii-----------\n");
+	printf("ft_isascii('a') = %d | isascii ('a') = %d\n", ft_isascii('a'), isascii('a'));
+	printf("ft_isascii('Z') = %d | isascii ('Z') = %d\n", ft_isascii('Z'), isascii('Z'));
+	printf("ft_isascii('1') = %d | isascii ('1') = %d\n", ft_isascii('1'), isascii('1'));
+	printf("ft_isascii(' ') = %d | isascii (' ') = %d\n", ft_isascii(' '), isascii(' '));
+	printf("ft_isascii('EOF') = %d | isascii ('EOF') = %d\n", ft_isascii(EOF), isascii(EOF));
+	
+	printf("---------ft_isprint-----------\n");
+	printf("ft_isprint('a') = %d | isprint ('a') = %d\n", ft_isprint('a'), isprint('a'));
+	printf("ft_isprint('Z') = %d | isprint ('Z') = %d\n", ft_isprint('Z'), isprint('Z'));
+	printf("ft_isprint('1') = %d | isprint ('1') = %d\n", ft_isprint('1'), isprint('1'));
+	printf("ft_isprint(' ') = %d | isprint (' ') = %d\n", ft_isprint(' '), isprint(' '));
+	printf("ft_isprint('EOF') = %d | isprint ('EOF') = %d\n", ft_isprint(EOF), isprint(EOF));
+	
+	printf("---------ft_toupper-----------\n");
+	printf("ft_toupper('a') = %d | toupper ('a') = %d\n", ft_toupper('a'), toupper('a'));
+	printf("ft_toupper('Z') = %d | toupper ('Z') = %d\n", ft_toupper('Z'), toupper('Z'));
+	printf("ft_toupper('1') = %d | toupper ('1') = %d\n", ft_toupper('1'), toupper('1'));
+	printf("ft_toupper(' ') = %d | toupper (' ') = %d\n", ft_toupper(' '), toupper(' '));
+	printf("ft_toupper('EOF') = %d | toupper ('EOF') = %d\n", ft_toupper(EOF), toupper(EOF));
+	
+	printf("---------ft_tolower-----------\n");
+	printf("ft_tolower('a') = %d | tolower ('a') = %d\n", ft_tolower('a'), tolower('a'));
+	printf("ft_tolower('Z') = %d | tolower ('Z') = %d\n", ft_tolower('Z'), tolower('Z'));
+	printf("ft_tolower('1') = %d | tolower ('1') = %d\n", ft_tolower('1'), tolower('1'));
+	printf("ft_tolower(' ') = %d | tolower (' ') = %d\n", ft_tolower(' '), tolower(' '));
+	printf("ft_tolower('EOF') = %d | tolower ('EOF') = %d\n", ft_tolower(EOF), tolower(EOF));
+	
+	printf("---------ft_strlen------------\n");
+	printf("ft_strlen('teste') = %ld | strlen ('teste') = %ld\n", ft_strlen("teste"), strlen("teste"));
+	
+	printf("---------ft_strlcpy------------\n");
+	char dst[5];
+	printf("ft_strlcpy(dst[5], 'tes', 5) = %ld | strlcpy (dst[5], 'tes', 5) = %ld\n", ft_strlcpy(dst, "tes", 5), strlcpy(dst, "tes", 5));
+	printf("ft_strlcpy dst = %s", dst);
+
+	printf("--------ft_atoi--------------\n");
+	printf("ft_atoi('  --1234') = %d | atoi ('  --1234') = %d\n", ft_atoi("  --1234"), atoi("  --1234"));
+	printf("ft_atoi('  +1234') = %d | atoi ('  +1234') = %d\n", ft_atoi("  +1234"), atoi("  +1234"));
+	return (0);
+
+}
