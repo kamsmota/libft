@@ -14,6 +14,7 @@ size_t ft_strlen(const char *s);
 size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
 int ft_atoi(const char *nptr);
 
+//testes
 int	main(void)
 {
 	printf("---------ft_isalpha----------\n");
