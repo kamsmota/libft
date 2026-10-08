@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/07 19:34:48 by kams              #+#    #+#             */
-/*   Updated: 2026/10/08 20:38:07 by kams             ###   ########.fr       */
+/*   Created: 2026/10/08 20:32:41 by kams              #+#    #+#             */
+/*   Updated: 2026/10/08 21:18:53 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-char *ft_strchr(const char *s, int c)
+static int ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while(s[i])
 	{
-		if (s[i] == c)
+		i++;
+	}
+	return (i);
+}
+
+char *ft_strrchr(const char *s, int c)
+{
+	int i;
+	int len;
+
+	i = 0;
+	len = ft_strlen(s);
+	while (i <= len)
+	{
+		if (s[len - i] == c)
 		{
-			return ((char *) &s[i]);
+			return ((char *) &s[len - i]);
 		}
 		i++;
 	}
-	if (c == '\0')
-	{
-		return ((char *) &s[i]);	
-	}
-    return (0);
+	return (0);
 }
