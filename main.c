@@ -12,6 +12,7 @@ int ft_toupper(int c);
 int ft_tolower(int c);
 size_t ft_strlen(const char *s);
 size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
+char *ft_strchr(const char *s, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_atoi(const char *nptr);
 
@@ -82,6 +83,11 @@ int	main(void)
 	printf("ft_strlcpy(dst[5], 'tes', 5) = %ld | strlcpy (dst[5], 'tes', 5) = %ld\n", ft_strlcpy(dst, "tes", 5), strlcpy(dst, "tes", 5));
 	printf("ft_strlcpy dst = %s\n", dst);
 
+	printf("---------ft_strchr------------\n");
+	printf("ft_strchr('hello', 'e') = %s | strchr ('hello','e') = %s\n", ft_strchr("hello", 'e'), strchr("hello", 'e'));
+	printf("ft_strchr('hello', 'l') = %s | strchr ('hello', 'l') = %s\n", ft_strchr("hello", 'l'), strchr("hello", 'l'));
+	printf("ft_strchr('hello', 'null') = %s | strchr ('hello', 'null' = %s\n", ft_strchr("hello", '\0'), strchr("hello", '\0'));
+	
 	printf("---------ft_strncmp------------\n");
 	printf("ft_strncmp('Hello', 'Hello', 3) = %d | strncmp ('Hello', 'Hello', 3) = %d\n", ft_strncmp("Hello", "Hello", 3), strncmp("Hello", "Hello", 3));
 	printf("ft_strncmp('Hello', 'Hemo', 3) = %d | strncmp ('Hello', 'Hemo', 3) = %d\n", ft_strncmp("Hello", "Hemo", 3), strncmp("Hello", "Hemo", 3));
