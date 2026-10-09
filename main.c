@@ -6,13 +6,7 @@
 
 void *ft_memset(void *ptr, int value, size_t num);
 void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int ft_isalnum(int c);
-int ft_isascii(int c);
-int ft_isprint(int c);
-int ft_toupper(int c);
-int ft_tolower(int c);
+int ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t ft_strlen(const char *s);
 size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
 size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dsize);
@@ -22,6 +16,13 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 void ft_bzero(void *s, size_t n);
 int ft_atoi(const char *nptr);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int ft_isalnum(int c);
+int ft_isascii(int c);
+int ft_isprint(int c);
+int ft_toupper(int c);
+int ft_tolower(int c);
 
 int	main(void)
 {
@@ -44,12 +45,6 @@ int	main(void)
 	printf("ft_memset('Hello', 'b', 5) = %s | memset('Hello', 'b', 5) = %s\n", str7, str8);
 
 	printf("---------ft_memcpy----------\n");
-	char str9[] = "Hello";
-	char str10[6] = "World";
-	printf("ft_memcpy = %s | memcpy = %s\n", str9, str10);
-	ft_memcpy(str10, str9, 3);
-	memcpy(str10, str9, 3);
-	printf("memcpy('World', 'Hello', 3) = %s\n", str10);
 	char str11[] = "Hello";
 	char str12[6] = "World";
 	ft_memcpy(str11, "ABCDE", 5);
@@ -70,6 +65,64 @@ int	main(void)
 	ft_memcpy(str17, "ABCDE", 5);
 	memcpy(str18, "ABCDE", 5);
 	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('Hello', 'ABCDE', 5) = %s\n", str17, str18);
+
+	printf("---------ft_memcmp------------\n");
+	printf("ft_memcmp('Hello', 'Hello', 3) = %d | memcmp ('Hello', 'Hello', 3) = %d\n", ft_memcmp("Hello", "Hello", 3), memcmp("Hello", "Hello", 3));
+	printf("ft_memcmp('Hello', 'Hemo', 3) = %d | memcmp ('Hello', 'Hemo', 3) = %d\n", ft_memcmp("Hello", "Hemo", 3), memcmp("Hello", "Hemo", 3));
+	printf("ft_memcmp('Hemo', 'Hello', 3) = %d | memcmp ('Hemo', 'Hello', 3) = %d\n", ft_memcmp("Hemo", "Hello", 3), memcmp("Hemo", "Hello", 3));
+	
+	printf("---------ft_strlen------------\n");
+	printf("ft_strlen('teste') = %ld | strlen ('teste') = %ld\n", ft_strlen("teste"), strlen("teste"));
+	printf("ft_strlen('control') = %ld | strlen ('control') = %ld\n", ft_strlen("control"), strlen("control"));
+	printf("ft_strlen('a') = %ld | strlen ('a') = %ld\n", ft_strlen("a"), strlen("a"));
+	printf("ft_strlen('') = %ld | strlen ('') = %ld\n", ft_strlen(""), strlen(""));
+	printf("ft_strlen(' ') = %ld | strlen (' ') = %ld\n", ft_strlen(" "), strlen(" "));
+	
+	printf("---------ft_strlcpy------------\n");
+	printf("ft_strlcpy(dst[5], \"tes\", 5) = %ld | strlcpy(dst[5], \"tes\", 5) = %ld\n", ft_strlcpy((char[5]){}, "tes", 5), strlcpy((char[5]){}, "tes", 5));
+	printf("ft_strlcpy(dst[4], \"testing\", 4) = %ld | strlcpy(dst[4], \"testing\", 4) = %ld\n", ft_strlcpy((char[4]){}, "testing", 4), strlcpy((char[4]){}, "testing", 4)); 
+	printf("ft_strlcpy(dst[5], \"\", 5) = %ld | strlcpy(dst[5], \"\", 5) = %ld\n", ft_strlcpy((char[5]){}, "", 5), strlcpy((char[5]){}, "", 5));
+
+	printf("---------ft_strlcat------------\n");
+	printf("ft_strlcat(\"hel\", \"lo\", 6) = %ld | strlcat(\"hel\", \"lo\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "lo", 6), strlcat((char[6]){"hel"}, "lo", 6));
+	printf("ft_strlcat(\"hel\", \"world\", 6) = %ld | strlcat(\"hel\", \"world\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "world", 6), strlcat((char[6]){"hel"}, "world", 6)); 
+	printf("ft_strlcat(\"hello\", \"world\", 4) = %ld | strlcat(\"hello\", \"world\", 4) = %ld\n", ft_strlcat((char[6]){"hello"}, "world", 4), strlcat((char[6]){"hello"}, "world", 4));
+	
+	printf("---------ft_strchr------------\n");
+	printf("ft_strchr('hello', 'e') = %s | strchr ('hello','e') = %s\n", ft_strchr("hello", 'e'), strchr("hello", 'e'));
+	printf("ft_strchr('hello', 'l') = %s | strchr ('hello', 'l') = %s\n", ft_strchr("hello", 'l'), strchr("hello", 'l'));
+	printf("ft_strchr('hello', 'null') = %s | strchr ('hello', 'null') = %s\n", ft_strchr("hello", '\0'), strchr("hello", '\0'));
+	
+	printf("---------ft_strrchr------------\n");
+	printf("ft_strrchr('hello', 'e') = %s | strrchr ('hello','e') = %s\n", ft_strrchr("hello", 'e'), strrchr("hello", 'e'));
+	printf("ft_strrchr('hello', 'l') = %s | strrchr ('hello', 'l') = %s\n", ft_strrchr("hello", 'l'), strrchr("hello", 'l'));
+	printf("ft_strrchr('hello', 'null') = %s | strrchr ('hello', 'null') = %s\n", ft_strrchr("hello", '\0'), strrchr("hello", '\0'));
+
+	printf("---------ft_strnstr------------\n");
+	printf("ft_strnstr('hello world', 'world', 11) = %s\n" , ft_strnstr("hello world", "world", 11));
+	printf("ft_strnstr('testing this', 'this', 7) = %s\n", ft_strnstr("testing this", "this", 7));
+	printf("ft_strnstr('testing world', 'testing', 12) = %s\n" , ft_strnstr("testing world", "testing", 7));
+	printf("ft_strnstr('hello', 'world', 11) = %s\n", ft_strnstr("hello", "world", 11));
+	
+	printf("---------ft_strncmp------------\n");
+	printf("ft_strncmp('Hello', 'Hello', 3) = %d | strncmp ('Hello', 'Hello', 3) = %d\n", ft_strncmp("Hello", "Hello", 3), strncmp("Hello", "Hello", 3));
+	printf("ft_strncmp('Hello', 'Hemo', 3) = %d | strncmp ('Hello', 'Hemo', 3) = %d\n", ft_strncmp("Hello", "Hemo", 3), strncmp("Hello", "Hemo", 3));
+	printf("ft_strncmp('Hemo', 'Hello', 3) = %d | strncmp ('Hemo', 'Hello', 3) = %d\n", ft_strncmp("Hemo", "Hello", 3), strncmp("Hemo", "Hello", 3));
+	
+	printf("--------ft_bzero--------------\n");
+	char str[] = "Hello";
+    printf("antes: %s\n", str);
+    ft_bzero(str, 2);
+    printf("depois: %s\n", str);
+    printf("str[0] = %d\n", str[0]);
+    printf("str[1] = %d\n", str[1]);
+    printf("str[2] = %c\n", str[2]);
+	printf("str[2] = %c\n", str[3]);
+	printf("str[2] = %c\n", str[4]);
+
+	printf("--------ft_atoi--------------\n");
+	printf("ft_atoi('  --1234') = %d | atoi ('  --1234') = %d\n", ft_atoi("  --1234"), atoi("  --1234"));
+	printf("ft_atoi('  +1234') = %d | atoi ('  +1234') = %d\n", ft_atoi("  +1234"), atoi("  +1234"));
 
 	printf("---------ft_isalpha----------\n");
 	printf("ft_isalpha('a') = %d | isalpha ('a') = %d\n", ft_isalpha('a'), isalpha('a'));
@@ -124,58 +177,4 @@ int	main(void)
 	printf("ft_tolower(' ') = %d | tolower (' ') = %d\n", ft_tolower(' '), tolower(' '));
 	printf("ft_tolower('EOF') = %d | tolower ('EOF') = %d\n", ft_tolower(EOF), tolower(EOF));
 	
-	printf("---------ft_strlen------------\n");
-	printf("ft_strlen('teste') = %ld | strlen ('teste') = %ld\n", ft_strlen("teste"), strlen("teste"));
-	printf("ft_strlen('control') = %ld | strlen ('control') = %ld\n", ft_strlen("control"), strlen("control"));
-	printf("ft_strlen('a') = %ld | strlen ('a') = %ld\n", ft_strlen("a"), strlen("a"));
-	printf("ft_strlen('') = %ld | strlen ('') = %ld\n", ft_strlen(""), strlen(""));
-	printf("ft_strlen(' ') = %ld | strlen (' ') = %ld\n", ft_strlen(" "), strlen(" "));
-	
-	printf("---------ft_strlcpy------------\n");
-	printf("ft_strlcpy(dst[5], \"tes\", 5) = %ld | strlcpy(dst[5], \"tes\", 5) = %ld\n", ft_strlcpy((char[5]){}, "tes", 5), strlcpy((char[5]){}, "tes", 5));
-	printf("ft_strlcpy(dst[4], \"testing\", 4) = %ld | strlcpy(dst[4], \"testing\", 4) = %ld\n", ft_strlcpy((char[4]){}, "testing", 4), strlcpy((char[4]){}, "testing", 4)); 
-	printf("ft_strlcpy(dst[5], \"\", 5) = %ld | strlcpy(dst[5], \"\", 5) = %ld\n", ft_strlcpy((char[5]){}, "", 5), strlcpy((char[5]){}, "", 5));
-
-	printf("---------ft_strlcat------------\n");
-	printf("ft_strlcat(\"hel\", \"lo\", 6) = %ld | strlcat(\"hel\", \"lo\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "lo", 6), strlcat((char[6]){"hel"}, "lo", 6));
-	printf("ft_strlcat(\"hel\", \"world\", 6) = %ld | strlcat(\"hel\", \"world\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "world", 6), strlcat((char[6]){"hel"}, "world", 6)); 
-	printf("ft_strlcat(\"hello\", \"world\", 4) = %ld | strlcat(\"hello\", \"world\", 4) = %ld\n", ft_strlcat((char[6]){"hello"}, "world", 4), strlcat((char[6]){"hello"}, "world", 4));
-	
-	printf("---------ft_strchr------------\n");
-	printf("ft_strchr('hello', 'e') = %s | strchr ('hello','e') = %s\n", ft_strchr("hello", 'e'), strchr("hello", 'e'));
-	printf("ft_strchr('hello', 'l') = %s | strchr ('hello', 'l') = %s\n", ft_strchr("hello", 'l'), strchr("hello", 'l'));
-	printf("ft_strchr('hello', 'null') = %s | strchr ('hello', 'null') = %s\n", ft_strchr("hello", '\0'), strchr("hello", '\0'));
-	
-	printf("---------ft_strrchr------------\n");
-	printf("ft_strrchr('hello', 'e') = %s | strrchr ('hello','e') = %s\n", ft_strrchr("hello", 'e'), strrchr("hello", 'e'));
-	printf("ft_strrchr('hello', 'l') = %s | strrchr ('hello', 'l') = %s\n", ft_strrchr("hello", 'l'), strrchr("hello", 'l'));
-	printf("ft_strrchr('hello', 'null') = %s | strrchr ('hello', 'null') = %s\n", ft_strrchr("hello", '\0'), strrchr("hello", '\0'));
-
-	printf("---------ft_strnstr------------\n");
-	printf("ft_strnstr('hello world', 'world', 11) = %s\n" , ft_strnstr("hello world", "world", 11));
-	printf("ft_strnstr('testing this', 'this', 7) = %s\n", ft_strnstr("testing this", "this", 7));
-	printf("ft_strnstr('testing world', 'testing', 12) = %s\n" , ft_strnstr("testing world", "testing", 7));
-	printf("ft_strnstr('hello', 'world', 11) = %s\n", ft_strnstr("hello", "world", 11));
-	
-	printf("---------ft_strncmp------------\n");
-	printf("ft_strncmp('Hello', 'Hello', 3) = %d | strncmp ('Hello', 'Hello', 3) = %d\n", ft_strncmp("Hello", "Hello", 3), strncmp("Hello", "Hello", 3));
-	printf("ft_strncmp('Hello', 'Hemo', 3) = %d | strncmp ('Hello', 'Hemo', 3) = %d\n", ft_strncmp("Hello", "Hemo", 3), strncmp("Hello", "Hemo", 3));
-	printf("ft_strncmp('Hemo', 'Hello', 3) = %d | strncmp ('Hemo', 'Hello', 3) = %d\n", ft_strncmp("Hemo", "Hello", 3), strncmp("Hemo", "Hello", 3));
-	
-	printf("--------ft_bzero--------------\n");
-	char str[] = "Hello";
-    printf("antes: %s\n", str);
-    ft_bzero(str, 2);
-    printf("depois: %s\n", str);
-    printf("str[0] = %d\n", str[0]);
-    printf("str[1] = %d\n", str[1]);
-    printf("str[2] = %c\n", str[2]);
-	printf("str[2] = %c\n", str[3]);
-	printf("str[2] = %c\n", str[4]);
-
-	printf("--------ft_atoi--------------\n");
-	printf("ft_atoi('  --1234') = %d | atoi ('  --1234') = %d\n", ft_atoi("  --1234"), atoi("  --1234"));
-	printf("ft_atoi('  +1234') = %d | atoi ('  +1234') = %d\n", ft_atoi("  +1234"), atoi("  +1234"));
-	return (0);
-
 }
