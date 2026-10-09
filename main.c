@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <strings.h>
 #include <stdlib.h>
 
+void *ft_memset(void *ptr, int value, size_t num);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int ft_isalnum(int c);
@@ -17,10 +19,29 @@ char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
+void ft_bzero(void *s, size_t n);
 int ft_atoi(const char *nptr);
 
 int	main(void)
 {
+	printf("---------ft_memset----------\n");
+	char str1[] = "Hello";
+	char str2[] = "Hello";
+	printf("ft_memset = %s | memset = %s\n", str1, str2);
+	ft_memset(str1, 'a', 2);
+	memset(str2, 'a', 2);
+	printf("ft_memset('Hello', 'a', 2) = %s | memset('Hello', 'a', 2) = %s\n", str1, str2);
+	char str5[] = "Hello";
+	char str6[] = "Hello";
+	ft_memset(str5, 0, 3);
+	memset(str6, 0, 3);
+	printf("ft_memset('Hello', 0, 3) = %s | memset('Hello', 0, 3) = %s\n", str5, str6);
+	char str7[6] = "Hello";
+	char str8[6] = "Hello";
+	ft_memset(str7, 'b', 5);
+	memset(str8, 'b', 5);
+	printf("ft_memset('Hello', 'b', 5) = %s | memset('Hello', 'b', 5) = %s\n", str7, str8);
+
 	printf("---------ft_isalpha----------\n");
 	printf("ft_isalpha('a') = %d | isalpha ('a') = %d\n", ft_isalpha('a'), isalpha('a'));
 	printf("ft_isalpha('Z') = %d | isalpha ('Z') = %d\n", ft_isalpha('Z'), isalpha('Z'));
@@ -112,6 +133,17 @@ int	main(void)
 	printf("ft_strncmp('Hello', 'Hemo', 3) = %d | strncmp ('Hello', 'Hemo', 3) = %d\n", ft_strncmp("Hello", "Hemo", 3), strncmp("Hello", "Hemo", 3));
 	printf("ft_strncmp('Hemo', 'Hello', 3) = %d | strncmp ('Hemo', 'Hello', 3) = %d\n", ft_strncmp("Hemo", "Hello", 3), strncmp("Hemo", "Hello", 3));
 	
+	printf("--------ft_bzero--------------\n");
+	char str[] = "Hello";
+    printf("antes: %s\n", str);
+    ft_bzero(str, 2);
+    printf("depois: %s\n", str);
+    printf("str[0] = %d\n", str[0]);
+    printf("str[1] = %d\n", str[1]);
+    printf("str[2] = %c\n", str[2]);
+	printf("str[2] = %c\n", str[3]);
+	printf("str[2] = %c\n", str[4]);
+
 	printf("--------ft_atoi--------------\n");
 	printf("ft_atoi('  --1234') = %d | atoi ('  --1234') = %d\n", ft_atoi("  --1234"), atoi("  --1234"));
 	printf("ft_atoi('  +1234') = %d | atoi ('  +1234') = %d\n", ft_atoi("  +1234"), atoi("  +1234"));
