@@ -15,6 +15,7 @@ size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
 size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dsize);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
+char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_atoi(const char *nptr);
 
@@ -100,6 +101,12 @@ int	main(void)
 	printf("ft_strrchr('hello', 'l') = %s | strrchr ('hello', 'l') = %s\n", ft_strrchr("hello", 'l'), strrchr("hello", 'l'));
 	printf("ft_strrchr('hello', 'null') = %s | strrchr ('hello', 'null') = %s\n", ft_strrchr("hello", '\0'), strrchr("hello", '\0'));
 
+	printf("---------ft_strnstr------------\n");
+	printf("ft_strnstr('hello world', 'world', 11) = %s\n" , ft_strnstr("hello world", "world", 11));
+	printf("ft_strnstr('testing this', 'this', 7) = %s\n", ft_strnstr("testing this", "this", 7));
+	printf("ft_strnstr('testing world', 'testing', 12) = %s\n" , ft_strnstr("testing world", "testing", 7));
+	printf("ft_strnstr('hello', 'world', 11) = %s\n", ft_strnstr("hello", "world", 11));
+	
 	printf("---------ft_strncmp------------\n");
 	printf("ft_strncmp('Hello', 'Hello', 3) = %d | strncmp ('Hello', 'Hello', 3) = %d\n", ft_strncmp("Hello", "Hello", 3), strncmp("Hello", "Hello", 3));
 	printf("ft_strncmp('Hello', 'Hemo', 3) = %d | strncmp ('Hello', 'Hemo', 3) = %d\n", ft_strncmp("Hello", "Hemo", 3), strncmp("Hello", "Hemo", 3));
