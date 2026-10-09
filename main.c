@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 void *ft_memset(void *ptr, int value, size_t num);
+void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int ft_isalnum(int c);
@@ -41,6 +42,34 @@ int	main(void)
 	ft_memset(str7, 'b', 5);
 	memset(str8, 'b', 5);
 	printf("ft_memset('Hello', 'b', 5) = %s | memset('Hello', 'b', 5) = %s\n", str7, str8);
+
+	printf("---------ft_memcpy----------\n");
+	char str9[] = "Hello";
+	char str10[6] = "World";
+	printf("ft_memcpy = %s | memcpy = %s\n", str9, str10);
+	ft_memcpy(str10, str9, 3);
+	memcpy(str10, str9, 3);
+	printf("memcpy('World', 'Hello', 3) = %s\n", str10);
+	char str11[] = "Hello";
+	char str12[6] = "World";
+	ft_memcpy(str11, "ABCDE", 5);
+	memcpy(str12, "ABCDE", 5);
+	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('World', 'ABCDE', 5) = %s\n", str11, str12);
+	char str13[] = "Hello";
+	char str14[] = "Hello";
+	ft_memcpy(str13, str14, 0);
+	memcpy(str13, str14, 0);
+	printf("ft_memcpy('Hello', 'Hello', 0) = %s | memcpy('Hello', 'Hello', 0) = %s\n", str13, str14);
+	char str15[] = "Hello";
+	char str16[] = "Hello";
+	ft_memcpy(str15, "XY", 2);
+	memcpy(str16, "XY", 2);
+	printf("ft_memcpy('Hello', 'XY', 2) = %s | memcpy('Hello', 'XY', 2) = %s\n", str15, str16);
+	char str17[6] = "Hello";
+	char str18[6] = "Hello";
+	ft_memcpy(str17, "ABCDE", 5);
+	memcpy(str18, "ABCDE", 5);
+	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('Hello', 'ABCDE', 5) = %s\n", str17, str18);
 
 	printf("---------ft_isalpha----------\n");
 	printf("ft_isalpha('a') = %d | isalpha ('a') = %d\n", ft_isalpha('a'), isalpha('a'));
