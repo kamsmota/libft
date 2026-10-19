@@ -152,6 +152,26 @@ int	main(void)
 	printf("ft_atoi('  --1234') = %d | atoi ('  --1234') = %d\n", ft_atoi("  --1234"), atoi("  --1234"));
 	printf("ft_atoi('  +1234') = %d | atoi ('  +1234') = %d\n", ft_atoi("  +1234"), atoi("  +1234"));
 
+	printf("---------ft_calloc------------\n");
+
+	int *arr27 = ft_calloc(3, sizeof(int));
+	int *arr28 = calloc(3, sizeof(int));
+	printf("ft_calloc(3, sizeof(int)): ");
+	for (int i = 0; i < 3; i++)
+	printf("%d ", arr27[i]);
+	printf("| calloc(3, sizeof(int)): ");
+	for (int i = 0; i < 3; i++)
+	printf("%d ", arr28[i]);
+	printf("\n");
+	free(arr27);
+	free(arr28);
+
+	char *str27 = ft_calloc(6, sizeof(char));
+	char *str28 = calloc(6, sizeof(char));
+	printf("ft_calloc(6, sizeof(char)): \"%s\" | calloc(6, sizeof(char)): \"%s\"\n",str27, str28);
+	free(str27);
+	free(str28);
+
 	printf("---------ft_isalpha----------\n");
 	printf("ft_isalpha('a') = %d | isalpha ('a') = %d\n", ft_isalpha('a'), isalpha('a'));
 	printf("ft_isalpha('Z') = %d | isalpha ('Z') = %d\n", ft_isalpha('Z'), isalpha('Z'));

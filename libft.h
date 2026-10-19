@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:57:38 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 18:59:07 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 20:54:22 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n);
 char *ft_strdup(const char *s);
 void ft_bzero(void *s, size_t n);
 int ft_atoi(const char *nptr);
+void *ft_calloc(size_t n, size_t size);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int ft_isalnum(int c);
