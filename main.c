@@ -8,6 +8,7 @@ void *ft_memset(void *ptr, int value, size_t num);
 void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
 void *ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
+void *ft_memmove(void *dest, const void *src, size_t n);
 size_t ft_strlen(const char *s);
 size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
 size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dsize);
@@ -79,6 +80,20 @@ int	main(void)
 	ft_memccpy(str21, "abcde", 'd', 5);
 	memccpy(str22, "abcde", 'd', 5);
 	printf("ft_memccpy('Hello', 'abcde', 'x', 5) = %s | memccpy('Hello', 'abcde', 'x', 5) = %s\n", str21, str22);
+
+	printf("---------ft_memmove------------\n");
+
+	char str23[] = "ABCDE";
+	char str24[] = "ABCDE";
+	ft_memmove(str23 + 2, str23, 3);
+	memmove(str24 + 2, str24, 3);
+	printf("ft_memmove(str + 2, str, 3) = %s | memmove(str + 2, str, 3) = %s\n", str23, str24);
+
+	char str25[] = "ABCDE";
+	char str26[] = "ABCDE";
+	ft_memmove(str25, str25 + 2, 3);
+	memmove(str26, str26 + 2, 3);
+	printf("ft_memmove(str, str + 2, 3) = %s | memmove(str, str + 2, 3) = %s\n", str25, str26);
 
 	printf("---------ft_memcmp------------\n");
 	printf("ft_memcmp('Hello', 'Hello', 3) = %d | memcmp ('Hello', 'Hello', 3) = %d\n", ft_memcmp("Hello", "Hello", 3), memcmp("Hello", "Hello", 3));
