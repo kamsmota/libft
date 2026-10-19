@@ -9,6 +9,7 @@ void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
 void *ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 void *ft_memmove(void *dest, const void *src, size_t n);
+void *ft_memchr(const void *s, int c, size_t n);
 size_t ft_strlen(const char *s);
 size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
 size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dsize);
@@ -94,6 +95,12 @@ int	main(void)
 	ft_memmove(str25, str25 + 2, 3);
 	memmove(str26, str26 + 2, 3);
 	printf("ft_memmove(str, str + 2, 3) = %s | memmove(str, str + 2, 3) = %s\n", str25, str26);
+
+	printf("---------ft_memchr------------\n");
+	printf("ft_memchr('hello', 'e', 3) = %p | memchr ('hello','e', 3) = %p\n", ft_memchr("hello", 'e', 3), memchr("hello", 'e', 3));
+	printf("ft_memchr('hello', 'l') = %p | memchr ('hello', 'l') = %p\n", ft_memchr("hello", 'l', 3), memchr("hello", 'l', 3));
+	printf("ft_memchr('hello', 'null') = %p | memchr ('hello', 'null') = %p\n", ft_memchr("hello", '\0', 6), memchr("hello", '\0', 6));
+	
 
 	printf("---------ft_memcmp------------\n");
 	printf("ft_memcmp('Hello', 'Hello', 3) = %d | memcmp ('Hello', 'Hello', 3) = %d\n", ft_memcmp("Hello", "Hello", 3), memcmp("Hello", "Hello", 3));
