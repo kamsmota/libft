@@ -6,6 +6,7 @@
 
 void *ft_memset(void *ptr, int value, size_t num);
 void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
+void *ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t ft_strlen(const char *s);
 size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize);
@@ -65,6 +66,19 @@ int	main(void)
 	ft_memcpy(str17, "ABCDE", 5);
 	memcpy(str18, "ABCDE", 5);
 	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('Hello', 'ABCDE', 5) = %s\n", str17, str18);
+
+	printf("---------ft_memccpy------------\n");
+	char str19[] = "Hello";
+	char str20[] = "Hello";
+	ft_memccpy(str19, "abcde", 'c', 5);
+	memccpy(str20, "abcde", 'c', 5);
+	printf("ft_memccpy('Hello', 'abcde', 'c', 5) = %s | memccpy('Hello', 'abcde', 'c', 5) = %s\n", str19, str20);
+
+	char str21[] = "Hello";
+	char str22[] = "Hello";
+	ft_memccpy(str21, "abcde", 'd', 5);
+	memccpy(str22, "abcde", 'd', 5);
+	printf("ft_memccpy('Hello', 'abcde', 'x', 5) = %s | memccpy('Hello', 'abcde', 'x', 5) = %s\n", str21, str22);
 
 	printf("---------ft_memcmp------------\n");
 	printf("ft_memcmp('Hello', 'Hello', 3) = %d | memcmp ('Hello', 'Hello', 3) = %d\n", ft_memcmp("Hello", "Hello", 3), memcmp("Hello", "Hello", 3));
