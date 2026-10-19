@@ -6,23 +6,11 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/08 16:05:24 by kams              #+#    #+#             */
-/*   Updated: 2026/10/08 22:19:38 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 19:04:05 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-static int ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while(s[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dsize)
 {

@@ -6,12 +6,11 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 19:27:39 by kams              #+#    #+#             */
-/*   Updated: 2026/10/07 18:28:40 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 19:05:13 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

@@ -6,24 +6,11 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:39:32 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 18:53:48 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 19:04:09 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-
-size_t ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while(s[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char *ft_strdup(const char *s)
 {

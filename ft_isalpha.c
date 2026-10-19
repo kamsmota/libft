@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalpha(int	c)
 {
 	if (((unsigned char)c >= 'A' && (unsigned char)c <= 'Z') ||

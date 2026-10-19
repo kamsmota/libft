@@ -6,11 +6,11 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 20:09:53 by kams              #+#    #+#             */
-/*   Updated: 2026/10/09 20:47:46 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 19:04:24 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {

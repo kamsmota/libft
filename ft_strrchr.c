@@ -6,21 +6,11 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/08 20:32:41 by kams              #+#    #+#             */
-/*   Updated: 2026/10/08 22:09:00 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 19:03:44 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while(s[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char *ft_strrchr(const char *s, int c)
 {

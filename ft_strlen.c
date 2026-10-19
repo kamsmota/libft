@@ -6,11 +6,11 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 14:23:25 by kams              #+#    #+#             */
-/*   Updated: 2026/10/02 15:19:33 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 19:03:57 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {

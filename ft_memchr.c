@@ -6,11 +6,11 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:28:11 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 18:34:45 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/19 19:04:41 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
