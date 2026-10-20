@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:57:38 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 20:54:22 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/20 18:49:14 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int ft_isascii(int c);
 int ft_isprint(int c);
 int ft_toupper(int c);
 int ft_tolower(int c);
+char *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

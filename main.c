@@ -2,45 +2,53 @@
 
 int	main(void)
 {
+	char buf_ft[32];
+	char buf_lib[32];
+	char *dup_ft;
+	char *dup_lib;
+	char *arr_ft;
+	char *arr_lib;
+	int i;
+
 	printf("---------ft_memset----------\n");
-	char str1[] = "Hello";
-	char str2[] = "Hello";
-	printf("ft_memset = %s | memset = %s\n", str1, str2);
-	ft_memset(str1, 'a', 2);
-	memset(str2, 'a', 2);
-	printf("ft_memset('Hello', 'a', 2) = %s | memset('Hello', 'a', 2) = %s\n", str1, str2);
-	char str5[] = "Hello";
-	char str6[] = "Hello";
-	ft_memset(str5, 0, 3);
-	memset(str6, 0, 3);
-	printf("ft_memset('Hello', 0, 3) = %s | memset('Hello', 0, 3) = %s\n", str5, str6);
-	char str7[6] = "Hello";
-	char str8[6] = "Hello";
-	ft_memset(str7, 'b', 5);
-	memset(str8, 'b', 5);
-	printf("ft_memset('Hello', 'b', 5) = %s | memset('Hello', 'b', 5) = %s\n", str7, str8);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+	memcpy(buf_lib, "Hello", sizeof("Hello"));
+	printf("ft_memset = %s | memset = %s\n", buf_ft, buf_lib);
+	ft_memset(buf_ft, 'a', 2);
+	memset(buf_lib, 'a', 2);
+	printf("ft_memset('Hello', 'a', 2) = %s | memset('Hello', 'a', 2) = %s\n", buf_ft, buf_lib);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+	memcpy(buf_lib, "Hello", sizeof("Hello"));
+	ft_memset(buf_ft, 0, 3);
+	memset(buf_lib, 0, 3);
+	printf("ft_memset('Hello', 0, 3) = %s | memset('Hello', 0, 3) = %s\n", buf_ft, buf_lib);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+	memcpy(buf_lib, "Hello", sizeof("Hello"));
+	ft_memset(buf_ft, 'b', 5);
+	memset(buf_lib, 'b', 5);
+	printf("ft_memset('Hello', 'b', 5) = %s | memset('Hello', 'b', 5) = %s\n", buf_ft, buf_lib);
 
 	printf("---------ft_memcpy----------\n");
-	char str11[] = "Hello";
-	char str12[6] = "World";
-	ft_memcpy(str11, "ABCDE", 5);
-	memcpy(str12, "ABCDE", 5);
-	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('World', 'ABCDE', 5) = %s\n", str11, str12);
-	char str13[] = "Hello";
-	char str14[] = "Hello";
-	ft_memcpy(str13, str14, 0);
-	memcpy(str13, str14, 0);
-	printf("ft_memcpy('Hello', 'Hello', 0) = %s | memcpy('Hello', 'Hello', 0) = %s\n", str13, str14);
-	char str15[] = "Hello";
-	char str16[] = "Hello";
-	ft_memcpy(str15, "XY", 2);
-	memcpy(str16, "XY", 2);
-	printf("ft_memcpy('Hello', 'XY', 2) = %s | memcpy('Hello', 'XY', 2) = %s\n", str15, str16);
-	char str17[6] = "Hello";
-	char str18[6] = "Hello";
-	ft_memcpy(str17, "ABCDE", 5);
-	memcpy(str18, "ABCDE", 5);
-	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('Hello', 'ABCDE', 5) = %s\n", str17, str18);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+	memcpy(buf_lib, "World", sizeof("World"));
+	ft_memcpy(buf_ft, "ABCDE", 5);
+	memcpy(buf_lib, "ABCDE", 5);
+	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('World', 'ABCDE', 5) = %s\n", buf_ft, buf_lib);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+	memcpy(buf_lib, "Hello", sizeof("Hello"));
+	ft_memcpy(buf_ft, buf_lib, 0);
+	memcpy(buf_ft, buf_lib, 0);
+	printf("ft_memcpy('Hello', 'Hello', 0) = %s | memcpy('Hello', 'Hello', 0) = %s\n", buf_ft, buf_lib);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+	memcpy(buf_lib, "Hello", sizeof("Hello"));
+	ft_memcpy(buf_ft, "XY", 2);
+	memcpy(buf_lib, "XY", 2);
+	printf("ft_memcpy('Hello', 'XY', 2) = %s | memcpy('Hello', 'XY', 2) = %s\n", buf_ft, buf_lib);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+	memcpy(buf_lib, "Hello", sizeof("Hello"));
+	ft_memcpy(buf_ft, "ABCDE", 5);
+	memcpy(buf_lib, "ABCDE", 5);
+	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('Hello', 'ABCDE', 5) = %s\n", buf_ft, buf_lib);
 
 	printf("---------ft_memccpy------------\n");
 	char str19[] = "Hello";
@@ -54,20 +62,19 @@ int	main(void)
 	ft_memccpy(str21, "abcde", 'd', 5);
 	memccpy(str22, "abcde", 'd', 5);
 	printf("ft_memccpy('Hello', 'abcde', 'x', 5) = %s | memccpy('Hello', 'abcde', 'x', 5) = %s\n", str21, str22);
-
+	
 	printf("---------ft_memmove------------\n");
+	memcpy(buf_ft, "ABCDE", sizeof("ABCDE"));
+	memcpy(buf_lib, "ABCDE", sizeof("ABCDE"));
+	ft_memmove(buf_ft + 2, buf_ft, 3);
+	memmove(buf_lib + 2, buf_lib, 3);
+	printf("ft_memmove(str + 2, str, 3) = %s | memmove(str + 2, str, 3) = %s\n", buf_ft, buf_lib);
 
-	char str23[] = "ABCDE";
-	char str24[] = "ABCDE";
-	ft_memmove(str23 + 2, str23, 3);
-	memmove(str24 + 2, str24, 3);
-	printf("ft_memmove(str + 2, str, 3) = %s | memmove(str + 2, str, 3) = %s\n", str23, str24);
-
-	char str25[] = "ABCDE";
-	char str26[] = "ABCDE";
-	ft_memmove(str25, str25 + 2, 3);
-	memmove(str26, str26 + 2, 3);
-	printf("ft_memmove(str, str + 2, 3) = %s | memmove(str, str + 2, 3) = %s\n", str25, str26);
+	memcpy(buf_ft, "ABCDE", sizeof("ABCDE"));
+	memcpy(buf_lib, "ABCDE", sizeof("ABCDE"));
+	ft_memmove(buf_ft, buf_ft + 2, 3);
+	memmove(buf_lib, buf_lib + 2, 3);
+	printf("ft_memmove(str, str + 2, 3) = %s | memmove(str, str + 2, 3) = %s\n", buf_ft, buf_lib);
 
 	printf("---------ft_memchr------------\n");
 	printf("ft_memchr('hello', 'e', 3) = %p | memchr ('hello','e', 3) = %p\n", ft_memchr("hello", 'e', 3), memchr("hello", 'e', 3));
@@ -138,39 +145,38 @@ int	main(void)
 	free(dup6);
 
 	printf("--------ft_bzero--------------\n");
-	char str[] = "Hello";
-    printf("antes: %s\n", str);
-    ft_bzero(str, 2);
-    printf("depois: %s\n", str);
-    printf("str[0] = %d\n", str[0]);
-    printf("str[1] = %d\n", str[1]);
-    printf("str[2] = %c\n", str[2]);
-	printf("str[2] = %c\n", str[3]);
-	printf("str[2] = %c\n", str[4]);
+	memcpy(buf_ft, "Hello", sizeof("Hello"));
+    printf("antes: %s\n", buf_ft);
+    ft_bzero(buf_ft, 2);
+    printf("depois: %s\n", buf_ft);
+    printf("str[0] = %d\n", buf_ft[0]);
+    printf("str[1] = %d\n", buf_ft[1]);
+    printf("str[2] = %c\n", buf_ft[2]);
+	printf("str[2] = %c\n", buf_ft[3]);
+	printf("str[2] = %c\n", buf_ft[4]);
 
 	printf("--------ft_atoi--------------\n");
 	printf("ft_atoi('  --1234') = %d | atoi ('  --1234') = %d\n", ft_atoi("  --1234"), atoi("  --1234"));
 	printf("ft_atoi('  +1234') = %d | atoi ('  +1234') = %d\n", ft_atoi("  +1234"), atoi("  +1234"));
 
 	printf("---------ft_calloc------------\n");
-
-	int *arr27 = ft_calloc(3, sizeof(int));
-	int *arr28 = calloc(3, sizeof(int));
+arr_ft = ft_calloc(3, sizeof(int));
+	arr_lib = calloc(3, sizeof(int));
 	printf("ft_calloc(3, sizeof(int)): ");
-	for (int i = 0; i < 3; i++)
-	printf("%d ", arr27[i]);
+	for (i = 0; i < 3; i++)
+	printf("%d ", arr_ft[i]);
 	printf("| calloc(3, sizeof(int)): ");
-	for (int i = 0; i < 3; i++)
-	printf("%d ", arr28[i]);
+	for (i = 0; i < 3; i++)
+	printf("%d ", arr_lib[i]);
 	printf("\n");
-	free(arr27);
-	free(arr28);
+	free(arr_ft);
+	free(arr_lib);
 
-	char *str27 = ft_calloc(6, sizeof(char));
-	char *str28 = calloc(6, sizeof(char));
-	printf("ft_calloc(6, sizeof(char)): \"%s\" | calloc(6, sizeof(char)): \"%s\"\n",str27, str28);
-	free(str27);
-	free(str28);
+	dup_ft = ft_calloc(6, sizeof(char));
+	dup_lib = calloc(6, sizeof(char));
+	printf("ft_calloc(6, sizeof(char)): \"%s\" | calloc(6, sizeof(char)): \"%s\"\n",dup_ft, dup_lib);
+	free(dup_ft);
+	free(dup_lib);
 
 	printf("---------ft_isalpha----------\n");
 	printf("ft_isalpha('a') = %d | isalpha ('a') = %d\n", ft_isalpha('a'), isalpha('a'));
@@ -224,5 +230,10 @@ int	main(void)
 	printf("ft_tolower('1') = %d | tolower ('1') = %d\n", ft_tolower('1'), tolower('1'));
 	printf("ft_tolower(' ') = %d | tolower (' ') = %d\n", ft_tolower(' '), tolower(' '));
 	printf("ft_tolower('EOF') = %d | tolower ('EOF') = %d\n", ft_tolower(EOF), tolower(EOF));
-	
+
+	printf("---------ft_substr------------\n");
+	dup_ft = ft_substr("Hello World", 0, 0);
+	printf("ft_substr('Hello World', 6, 11): \"%s\"\n", dup_ft);
+	free(dup_ft);
+	return (0);
 }
