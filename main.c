@@ -235,5 +235,22 @@ arr_ft = ft_calloc(3, sizeof(int));
 	dup_ft = ft_substr("Hello World", 0, 0);
 	printf("ft_substr('Hello World', 6, 11): \"%s\"\n", dup_ft);
 	free(dup_ft);
-	return (0);
+	
+	printf("---------ft_strjoin------------\n");
+
+	dup_ft = ft_strjoin("Hello ", "World");
+	printf("ft_strjoin(\"Hello \", \"World\"): \"%s\"\n", dup_ft);
+	free(dup_ft);
+
+	dup_ft = ft_strjoin("", "World");
+	printf("ft_strjoin(\"\", \"World\"): \"%s\"\n", dup_ft);
+	free(dup_ft);
+
+	dup_ft = ft_strjoin("Hello", "");
+	printf("ft_strjoin(\"Hello\", \"\"): \"%s\"\n", dup_ft);
+	free(dup_ft);
+
+	dup_ft = ft_strjoin("", "");
+	printf("ft_strjoin(\"\", \"\"): \"%s\"\n", dup_ft);
+	free(dup_ft);
 }
