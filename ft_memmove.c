@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 15:38:19 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 19:04:21 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/21 15:31:08 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
 
-	if (d > s) //string dada com indice
+	if (d > s) //if the string already has a index
 	{
 		i = n;
 		while (i > 0)
