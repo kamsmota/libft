@@ -260,7 +260,7 @@ arr_ft = ft_calloc(3, sizeof(int));
 	free(dup_ft);
 
 	dup_ft = ft_strtrim("hello...", ".");
-	printf("ft_strtrim('hello world...', '.'): \"%s\"\n", dup_ft);
+	printf("ft_strtrim('hello...', '.'): \"%s\"\n", dup_ft);
 	free(dup_ft);
 
 	dup_ft = ft_strtrim("...hello...world...", ".");
