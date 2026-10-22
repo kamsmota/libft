@@ -253,4 +253,17 @@ arr_ft = ft_calloc(3, sizeof(int));
 	dup_ft = ft_strjoin("", "");
 	printf("ft_strjoin(\"\", \"\"): \"%s\"\n", dup_ft);
 	free(dup_ft);
+
+	printf("---------ft_strtrim------------\n");	
+	dup_ft = ft_strtrim("...hello world.", ".");
+	printf("ft_strtrim('...hello world.', '.'): \"%s\"\n", dup_ft);
+	free(dup_ft);
+
+	dup_ft = ft_strtrim("hello...", ".");
+	printf("ft_strtrim('hello world...', '.'): \"%s\"\n", dup_ft);
+	free(dup_ft);
+
+	dup_ft = ft_strtrim("...hello...world...", ".");
+	printf("ft_strtrim('...hello...world...', '.'): \"%s\"\n", dup_ft);
+	free(dup_ft);
 }
