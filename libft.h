@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:57:38 by kams              #+#    #+#             */
-/*   Updated: 2026/10/22 16:37:50 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/22 16:40:22 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int ft_toupper(int c);
 int ft_tolower(int c);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
-char *ft_strtrim(char const *s1, char const *set)
+char *ft_strtrim(char const *s1, char const *set);
 
 #endif
