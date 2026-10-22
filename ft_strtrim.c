@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 17:00:34 by kams              #+#    #+#             */
-/*   Updated: 2026/10/22 16:45:53 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/22 17:14:21 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	{
 		begin++;
 	}
-	while (s1[end] && ft_strchr(set, s1[end - 1]))
+	while (end > begin && ft_strchr(set, s1[end - 1]))
 	{
 		end--;
 	}
@@ -37,8 +37,10 @@ char *ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (begin < end)
 	{
-		str[i] = s1[begin++];
+		str[i] = s1[begin];
 		i++;
+		begin++;
 	}
+	str[i] = '\0';
 	return (str);
 }
