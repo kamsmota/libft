@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/08 20:32:41 by kams              #+#    #+#             */
-/*   Updated: 2026/10/22 16:47:47 by kams             ###   ########.fr       */
+/*   Updated: 2026/10/22 17:22:52 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char *ft_strrchr(const char *s, int c)
 	len = ft_strlen(s);
 	while (i <= len)
 	{
-		if (s[len - i] == c)
+		if (s[len - i] == (unsigned char)c)
 		{
 			return ((char *) &s[len - i]);
 		}
