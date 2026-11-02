@@ -3,25 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/09 21:35:31 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 19:04:45 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:57:01 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:29:49 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n)
+void	*ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n)
 {
-	unsigned char *s;
-	unsigned char *d;
-	size_t i;
+	unsigned char	*s;
+	unsigned char	*d;
+	size_t	i;
 
 	i = 0;
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
-	
 	while (i < n)
 	{
 		d[i] = s[i];

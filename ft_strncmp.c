@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/07 16:06:44 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 19:03:53 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:58:01 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:22:45 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n && s1[i] && s2[i])

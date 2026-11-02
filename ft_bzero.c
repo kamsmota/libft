@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/09 19:02:30 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 19:05:09 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:56:26 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:02:26 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	unsigned char *str;
+	size_t	i;
+	unsigned char	*str;
 
 	i = 0;
 	str = (unsigned char *)s;

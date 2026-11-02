@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 18:40:31 by kams              #+#    #+#             */
-/*   Updated: 2026/10/20 22:54:45 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:58:28 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:17:33 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *str; 
-	size_t strsize; 
-	size_t i; 
-	
+	char	*str;
+	size_t	strsize;
+	size_t	i;
+
 	if (s == NULL)
 	{
 		return (0);
 	}
-	strsize = ft_strlen(s); 
+	strsize = ft_strlen(s);
 	if (start >= strsize)
 	{
 		len = 0;
@@ -31,7 +31,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		len = strsize - start;
 	}
-	str = malloc((len + 1) * sizeof(char)); 
+	str = malloc((len + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		return (0);

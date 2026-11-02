@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.pt>                +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 20:33:59 by kmota             #+#    #+#             */
-/*   Updated: 2026/09/30 20:33:59 by kmota            ###   ########.pt       */
+/*   Created: 2026/11/02 15:56:34 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 15:56:34 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int	c)
+int	ft_isalpha(int c)
 {
-	if (((unsigned char)c >= 'A' && (unsigned char)c <= 'Z') ||
-	((unsigned char)c >= 'a' && (unsigned char)c <= 'z'))
+	if (((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
+		|| ((unsigned char)c >= 'a' && (unsigned char)c <= 'z'))
 	{
 		return (1);
 	}
 	return (0);
 }
-

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:11:26 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 19:03:40 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:58:32 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:13:54 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
 	{

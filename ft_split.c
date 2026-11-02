@@ -3,52 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/22 17:28:18 by kams              #+#    #+#             */
-/*   Updated: 2026/10/28 22:35:41 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:57:28 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:41:00 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 // function to count words (ft_strchr modified)
-static size_t ft_chrcstr(char const *s, char c)
+static	size_t	ft_chrcstr(char const *s, char c)
+{
+	size_t	i;
+	size_t	counter;
+
+	i = 0;
+	counter = 0;
+	while (s[i])
 	{
-		size_t i;
-		size_t counter;
-		i = 0;
-		counter = 0;
-		while(s[i])
+		if (s[i] != (unsigned char)c)
 		{
-			if (s[i] != (unsigned char)c)
+			counter++;
+			while (s[i] != (unsigned char)c)
 			{
-				counter++;
-				while(s[i] != (unsigned char)c)
-				{
-					i++;
-				}
-			}
-			else
-			{
-				i++;	
+				i++;
 			}
 		}
-		return (counter);
+		else
+		{
+			i++;
+		}
 	}
+	return (counter);
+}
 
 // function to copy the string to te memory allocated (ft_substr modified)
-static char *ft_substr(char const *s, unsigned int start, size_t len)
+static	char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *str; 
-	size_t strsize; 
-	size_t i; 
-	
+	char	*str;
+	size_t	strsize;
+	size_t	i;
+
 	if (s == NULL)
 	{
 		return (0);
 	}
-	strsize = ft_strlen(s); 
+	strsize = ft_strlen(s);
 	if (start >= strsize)
 	{
 		len = 0;
@@ -57,7 +58,7 @@ static char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		len = strsize - start;
 	}
-	str = malloc((len + 1) * sizeof(char)); 
+	str = malloc((len + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		return (0);
@@ -73,7 +74,7 @@ static char *ft_substr(char const *s, unsigned int start, size_t len)
 }
 
 // function to free the memory
-static void	frwords(char **str, size_t count)
+static	void	frwords(char **str, size_t count)
 {
 	size_t	i;
 
@@ -85,7 +86,8 @@ static void	frwords(char **str, size_t count)
 	}
 	free(str);
 }
-char **ft_split(char const *s, char c)
+
+char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	size_t	i;
@@ -96,7 +98,7 @@ char **ft_split(char const *s, char c)
 	{
 		return (0);
 	}
-	str = malloc((ft_chrcstr(s, c) + 1)* sizeof(char *));
+	str = malloc((ft_chrcstr(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (0);
 	i = 0;

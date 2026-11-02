@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/07 19:34:48 by kams              #+#    #+#             */
-/*   Updated: 2026/10/22 17:22:30 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:57:32 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:40:06 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ char *ft_strchr(const char *s, int c)
 	}
 	if (c == '\0')
 	{
-		return ((char *) &s[i]);	
+		return ((char *) &s[i]);
 	}
-    return (0);
+	return (0);
 }

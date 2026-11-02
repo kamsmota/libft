@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/01 23:00:44 by kams              #+#    #+#             */
-/*   Updated: 2026/10/19 19:04:48 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:56:55 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:10:05 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int	c)
+int	ft_isprint(int c)
 {
 	if ((unsigned char)c >= 32 && (unsigned char)c <= 126)
 	{

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 17:00:34 by kams              #+#    #+#             */
-/*   Updated: 2026/10/22 17:14:21 by kams             ###   ########.fr       */
+/*   Created: 2026/11/02 15:58:22 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/02 16:18:30 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int begin;
-	int end;
-	int i;
-	char *str;
+	int	begin;
+	int	end;
+	int	i;
+	char	*str;
 
 	begin = 0;
 	end = ft_strlen(s1);
@@ -29,7 +29,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	{
 		end--;
 	}
-	str = malloc((end - begin + 1) *sizeof(char));
+	str = malloc((end - begin + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		return (0);
