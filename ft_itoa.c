@@ -6,54 +6,49 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:32:31 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/03 16:12:38 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/03 18:41:32 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char *ptr;
+	int d;
 	int i;
+	int nb;
 	int div;
-	int v;
 
-	i = 0;
+	d = 0; //contar casa decimal
+	nb = n;
+	while (nb > 0)
+	{
+		nb /= 10;
+		d++;
+	}
+	ptr = malloc((d + 1) * sizeof(char));
 	div = 1;
-	v = 0;
-	ptr = "";
+	i = 0;
 	if (n < 10)
 	{
-		v = 1;
 		ptr[i] = (n + '0');
-		return (ptr);
+		i++;
 	}
-	
-	else if ((n > 9))
+	else
 	{
-		while ((n / div) > 9)
+		while ((n / div) > 1)
 		{
 			div *= 10;
-			v++;
 		}
 		while (div > 0)
 		{
-			ptr[i] = n / div;
+			ptr[i] = ((n / div) + '0');
 			n = n % div;
 			div /= 10;
 			i++;
 		}
 	}
-	ptr[i + 1] = '\0';
+	ptr[i] = '\0';
 	return (ptr);
 }
-
-
-int main ()
-{
-	printf("ft_itoa(1): %s", ft_itoa(1));
-	printf("ft_itoa(12): %s", ft_itoa(12));
-	printf("ft_itoa(1234): %s", ft_itoa(1234));
-}
-// malloc deve vir antes de ptr receber algum valor

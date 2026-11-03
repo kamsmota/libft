@@ -6,7 +6,7 @@
 #    By: kmota <kmota@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/02 15:58:48 by kmota             #+#    #+#              #
-#    Updated: 2026/11/03 15:52:01 by kmota            ###   ########.fr        #
+#    Updated: 2026/11/03 18:12:50 by kmota            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ fclean: clean
 re: fclean all
 
 test: all
-	$(CC) $(CFLAGS) main.c $(NAME) -o test
+	$(CC) $(CFLAGS) main.c $(NAME) -o test -lbsd
 	./test
 
 .PHONY: all clean fclean re test

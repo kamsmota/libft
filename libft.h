@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:58:40 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/03 15:51:46 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/03 18:41:28 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
+#include <bsd/string.h>
 #include <strings.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -48,6 +48,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-char *ft_itoa(int n);
+char	*ft_itoa(int n);
 
 #endif

@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <string.h>
 
 int	main(void)
 {
@@ -10,7 +9,7 @@ int	main(void)
 	char *arr_ft;
 	char *arr_lib;
 	int i;
-	char **testsplit;
+	// char **testsplit;
 
 	printf("---------ft_memset----------\n");
 	memcpy(buf_ft, "Hello", sizeof("Hello"));
@@ -97,14 +96,14 @@ int	main(void)
 	printf("ft_strlen(' ') = %ld | strlen (' ') = %ld\n", ft_strlen(" "), strlen(" "));
 	
 	printf("---------ft_strlcpy------------\n");
-	char dest[10];
-	// char destft[10];
-	printf("ft_strlcpy(dst[5], 'test', 5) = %ld\n)", ft_strlcpy(dest, "test", 5));
-	
-	// printf("---------ft_strlcat------------\n");
-	// printf("ft_strlcat(\"hel\", \"lo\", 6) = %ld | strlcat(\"hel\", \"lo\", 6) = %d\n", ft_strlcat((char[6]){"hel"}, "lo", 6), strlcat((char[6]){"hel"}, "lo", 6));
-	// printf("ft_strlcat(\"hel\", \"world\", 6) = %ld | strlcat(\"hel\", \"world\", 6) = %d\n", ft_strlcat((char[6]){"hel"}, "world", 6), strlcat((char[6]){"hel"}, "world", 6)); 
-	// printf("ft_strlcat(\"hello\", \"world\", 4) = %ld | strlcat(\"hello\", \"world\", 4) = %d\n", ft_strlcat((char[6]){"hello"}, "world", 4), strlcat((char[6]){"hello"}, "world", 4));
+	printf("ft_strlcpy(dst[5], \"tes\", 5) = %ld | strlcpy(dst[5], \"tes\", 5) = %ld\n", ft_strlcpy((char[5]){}, "tes", 5), strlcpy((char[5]){}, "tes", 5));
+	printf("ft_strlcpy(dst[4], \"testing\", 4) = %ld | strlcpy(dst[4], \"testing\", 4) = %ld\n", ft_strlcpy((char[4]){}, "testing", 4), strlcpy((char[4]){}, "testing", 4)); 
+	printf("ft_strlcpy(dst[5], \"\", 5) = %ld | strlcpy(dst[5], \"\", 5) = %ld\n", ft_strlcpy((char[5]){}, "", 5), strlcpy((char[5]){}, "", 5));
+
+	printf("---------ft_strlcat------------\n");
+	printf("ft_strlcat(\"hel\", \"lo\", 6) = %ld | strlcat(\"hel\", \"lo\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "lo", 6), strlcat((char[6]){"hel"}, "lo", 6));
+	printf("ft_strlcat(\"hel\", \"world\", 6) = %ld | strlcat(\"hel\", \"world\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "world", 6), strlcat((char[6]){"hel"}, "world", 6)); 
+	printf("ft_strlcat(\"hello\", \"world\", 4) = %ld | strlcat(\"hello\", \"world\", 4) = %ld\n", ft_strlcat((char[6]){"hello"}, "world", 4), strlcat((char[6]){"hello"}, "world", 4));
 	
 	printf("---------ft_strchr------------\n");
 	printf("ft_strchr('hello', 'e') = %s | strchr ('hello','e') = %s\n", ft_strchr("hello", 'e'), strchr("hello", 'e'));
@@ -261,25 +260,27 @@ arr_ft = ft_calloc(3, sizeof(int));
 	free(dup_ft);
 
 	dup_ft = ft_strtrim("hello...", ".");
-	printf("ft_strtrim('hello...', '.'): \"%s\"\n", dup_ft);
+	printf("ft_strtrim('hello...', '.'): %s\n", dup_ft);
 	free(dup_ft);
 
 	dup_ft = ft_strtrim("...hello...world...", ".");
-	printf("ft_strtrim('...hello...world...', '.'): \"%s\"\n", dup_ft);
+	printf("ft_strtrim('...hello...world...', '.'): %s\n", dup_ft);
 	free(dup_ft);
 
-	printf("---------ft_split------------\n");
-	int n;
+	// printf("---------ft_split------------\n");
+	// int n;
 
-	n = 0;
-	testsplit = ft_split("...hello...world...", '.');
-	while (testsplit[n] != NULL)
-	{
-		printf("ft_split('...hello...world...', '.'): \"%s\"\n", testsplit[n]);
-		n++;
-	}
-	free(testsplit);
+	// n = 0;
+	// testsplit = ft_split("...hello...world...", '.');
+	// while (testsplit[n] != NULL)
+	// {
+	// 	printf("ft_split('...hello...world...', '.'): %s\n", testsplit[n]);
+	// 	n++;
+	// }
+	// free(testsplit);
 
 	printf("---------ft_itoa----------\n");
-	printf("ft_itoa (1):  %s", ft_itoa(1));
+	printf("ft_itoa(1): %s\n", ft_itoa(1));
+	printf("ft_itoa(12): %s\n", ft_itoa(12));
+	printf("ft_itoa(12346789): %s\n", ft_itoa(12346789));
 }
