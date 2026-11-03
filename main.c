@@ -281,5 +281,5 @@ arr_ft = ft_calloc(3, sizeof(int));
 	free(testsplit);
 
 	printf("---------ft_itoa----------\n");
-	printf("ft_itoa (1):  %s", ft_itoa(1))
+	printf("ft_itoa (1):  %s", ft_itoa(1));
 }
