@@ -9,7 +9,7 @@ int	main(void)
 	char *arr_ft;
 	char *arr_lib;
 	int i;
-	// char **testsplit;
+	char **testsplit;
 
 	printf("---------ft_memset----------\n");
 	memcpy(buf_ft, "Hello", sizeof("Hello"));
@@ -267,17 +267,17 @@ arr_ft = ft_calloc(3, sizeof(int));
 	printf("ft_strtrim('...hello...world...', '.'): %s\n", dup_ft);
 	free(dup_ft);
 
-	// printf("---------ft_split------------\n");
-	// int n;
+	printf("---------ft_split------------\n");
+	int n;
 
-	// n = 0;
-	// testsplit = ft_split("...hello...world...", '.');
-	// while (testsplit[n] != NULL)
-	// {
-	// 	printf("ft_split('...hello...world...', '.'): %s\n", testsplit[n]);
-	// 	n++;
-	// }
-	// free(testsplit);
+	n = 0;
+	testsplit = ft_split("...hello...world...", '.');
+	while (testsplit[n] != NULL)
+	{
+		printf("ft_split('...hello...world...', '.'): %s\n", testsplit[n]);
+		n++;
+	}
+	free(testsplit);
 
 	printf("---------ft_itoa----------\n");
 	printf("ft_itoa(1): %s\n", ft_itoa(1));
