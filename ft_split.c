@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:28 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:41:00 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/03 14:12:37 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static	size_t	ft_chrcstr(char const *s, char c)
 }
 
 // function to copy the string to te memory allocated (ft_substr modified)
-static	char	*ft_substr(char const *s, unsigned int start, size_t len)
+static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	strsize;
@@ -94,37 +94,37 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	start;
 
-	if (!s)
+	if (!s) //string vazia
 	{
 		return (0);
 	}
-	str = malloc((ft_chrcstr(s, c) + 1) * sizeof(char *));
+	str = malloc((ft_chrcstr(s, c) + 1) * sizeof(char *)); //quantidade de palavras + nulo
 	if (!str)
 		return (0);
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] && s[i] == c) //caractere igual ao delimitador
 		{
 			i++;
 		}
-		start = i;
-		while (s[i] && s[i] != c)
+		start = i; // fim do delimitador e comeco da palavra
+		while (s[i] && s[i] != c) 
 		{
 			i++;
 		}
 		if (i > start) // verify if it has advanced at least one character 
 		{
-			str[j] = ft_substr(s, start, i - start); // the function receives the "end" of the word it've found - the start of that
-			if (!str[j])
+			str[j] = ft_sbstr(s, start, i - start); // the function receives the "end" of the word it've found - the start of that
+			if (!str[j]) // se a string n receber nada
 			{
-				free_words(str, j);
+				frwords(str, j);
 				return (0);
 			}
 			j++;
 		}
 	}
-	str[j] = '\0';
+	str[j] = "\0";
 	return (str);
 }
