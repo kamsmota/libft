@@ -316,4 +316,21 @@ arr_ft = ft_calloc(3, sizeof(int));
 	printf("---------ft_putchar_fd----------\n");
 	ft_putchar_fd('s', 1);
 	printf("\n");
-}
+
+	printf("---------ft_putstr_fd----------\n");
+	ft_putstr_fd("teste", 1);
+	printf("\n");
+
+	printf("---------ft_putendl_fd----------\n");
+	ft_putendl_fd("teste", 1);
+
+	printf("---------ft_putnbr_fd----------\n");
+	ft_putnbr_fd(1, 1);
+	printf("\n");
+	ft_putnbr_fd(12, 1);
+	printf("\n");
+	ft_putnbr_fd(123, 1);
+	printf("\n");
+	ft_putnbr_fd(1234678, 1);
+	printf("\n");
+} 
