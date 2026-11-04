@@ -312,4 +312,8 @@ arr_ft = ft_calloc(3, sizeof(int));
 	char	str[] = "abcdefghij";
 	ft_striteri(str, alternate_case_iteri);
 	printf("ft_striteri(\"abcdefghij\", alternate_case_iteri) = \"%s\"\n", str);
+
+	printf("---------ft_putchar_fd----------\n");
+	ft_putchar_fd('s', 1);
+	printf("\n");
 }
