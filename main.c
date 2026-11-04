@@ -1,5 +1,23 @@
 #include "libft.h"
 
+// testar strmapi
+	char	alternate_case(unsigned int i, char c)
+	{
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	if (i % 2 != 0 && c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
+	}
+
+void	alternate_case_iteri(unsigned int i, char *c)
+{
+	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
+		*c = *c - 32;
+	else if (i % 2 != 0 && *c >= 'A' && *c <= 'Z')
+		*c = *c + 32;
+}
+
 int	main(void)
 {
 	char buf_ft[32];
@@ -283,4 +301,15 @@ arr_ft = ft_calloc(3, sizeof(int));
 	printf("ft_itoa(1): %s\n", ft_itoa(1));
 	printf("ft_itoa(12): %s\n", ft_itoa(12));
 	printf("ft_itoa(12346789): %s\n", ft_itoa(12346789));
+
+	printf("---------ft_strmapi----------\n");
+	char	*result;
+	result = ft_strmapi("abcdefghij", alternate_case);
+	printf("ft_strmapi(\"abcdefghij\", alternate_case) = \"%s\"\n", result);
+	free(result);
+
+	printf("---------ft_strmapi----------\n");
+	char	str[] = "abcdefghij";
+	ft_striteri(str, alternate_case_iteri);
+	printf("ft_striteri(\"abcdefghij\", alternate_case_iteri) = \"%s\"\n", str);
 }
