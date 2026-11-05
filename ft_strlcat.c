@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:47 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:27:05 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/05 14:36:47 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dsize)
 	size_t	ndst;
 	size_t	nsrc;
 	size_t	i;
-	
+
 	ndst = ft_strlen(dst);
 	nsrc = ft_strlen(src);
 	if (dsize <= ndst)

@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:32:31 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/03 18:41:32 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/05 14:38:10 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_itoa(int n)
 {
-	char *ptr;
-	int d;
-	int i;
-	int nb;
-	int div;
+	char	*ptr;
+	int	d;
+	int	i;
+	int	nb;
+	int	div;
 
 	d = 0; //contar casa decimal
 	nb = n;

@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:28 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/03 18:49:46 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/05 14:35:57 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		}
 		start = i; // fim do delimitador e comeco da palavra
-		while (s[i] && s[i] != c) 
+		while (s[i] && s[i] != c)
 		{
 			i++;
 		}

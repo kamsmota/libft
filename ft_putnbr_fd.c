@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 20:42:14 by kams              #+#    #+#             */
-/*   Updated: 2026/11/04 20:56:41 by kams             ###   ########.fr       */
+/*   Created: 2026/11/05 14:34:12 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/05 14:40:16 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int div;
-	char c;
-	
+	int	div;
+	char	c;
+
 	if (n < 10)
 	{
 		c = n + '0';
@@ -36,7 +36,5 @@ void	ft_putnbr_fd(int n, int fd)
 			n = n % div;
 			div /= 10;
 		}
-		
 	}
-	
 }
