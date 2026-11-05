@@ -6,13 +6,13 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:01 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:29:49 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/05 17:20:03 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char	*s;
 	unsigned char	*d;

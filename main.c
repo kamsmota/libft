@@ -144,7 +144,7 @@ int	main(void)
 	printf("ft_strncmp('Hello', 'Hello', 3) = %d | strncmp ('Hello', 'Hello', 3) = %d\n", ft_strncmp("Hello", "Hello", 3), strncmp("Hello", "Hello", 3));
 	printf("ft_strncmp('Hello', 'Hemo', 3) = %d | strncmp ('Hello', 'Hemo', 3) = %d\n", ft_strncmp("Hello", "Hemo", 3), strncmp("Hello", "Hemo", 3));
 	printf("ft_strncmp('Hemo', 'Hello', 3) = %d | strncmp ('Hemo', 'Hello', 3) = %d\n", ft_strncmp("Hemo", "Hello", 3), strncmp("Hemo", "Hello", 3));
-	
+
 	printf("---------ft_strdup------------\n");
 	char *dup1 = ft_strdup("Hello");
 	char *dup2 = strdup("Hello");

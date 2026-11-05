@@ -6,13 +6,13 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:53 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:24:06 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/05 17:21:00 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
 	size_t	i;
 

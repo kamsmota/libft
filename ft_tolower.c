@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:58:32 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:13:54 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/05 17:25:39 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 int	ft_tolower(int c)
 {
+	if ((unsigned char)c == '\0')
+	{
+		return (0);
+	}
 	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
 	{
 		return (c + 32);
 	}
-	return (0);
+	return (c);
 }
