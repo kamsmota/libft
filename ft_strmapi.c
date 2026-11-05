@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 18:52:09 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 14:41:53 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/05 17:02:43 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	ptr[i] = '\0';
-	return(ptr);
+	return (ptr);
 }
