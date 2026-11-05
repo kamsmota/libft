@@ -10,6 +10,7 @@
 	return (c);
 	}
 
+	// testar 
 void	alternate_case_iteri(unsigned int i, char *c)
 {
 	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
