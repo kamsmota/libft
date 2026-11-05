@@ -115,7 +115,7 @@ int	main(void)
 	printf("ft_strlen(' ') = %ld | strlen (' ') = %ld\n", ft_strlen(" "), strlen(" "));
 	
 	printf("---------ft_strlcpy------------\n");
-	printf("ft_strlcpy(dst[5], \"tes\", 5) = %ld | strlcpy(dst[5], \"tes\", 5) = %ld\n", ft_strlcpy((char[5]){}, "tes", 5), strlcpy((char[5]){}, "tes", 5));
+	printf("ft_strlcpy(dst[5], \"tes\", 5) = %ld | strlcpy(dst[5], \"tes\", 5) = %ld\n", ft_strlcpy((char[5]){}, "tes", 5), strlcpy((char[5]), "tes", 5));
 	printf("ft_strlcpy(dst[4], \"testing\", 4) = %ld | strlcpy(dst[4], \"testing\", 4) = %ld\n", ft_strlcpy((char[4]){}, "testing", 4), strlcpy((char[4]){}, "testing", 4)); 
 	printf("ft_strlcpy(dst[5], \"\", 5) = %ld | strlcpy(dst[5], \"\", 5) = %ld\n", ft_strlcpy((char[5]){}, "", 5), strlcpy((char[5]){}, "", 5));
 
