@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 19:49:05 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 19:57:48 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/06 13:04:31 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_list *ft_lstlast(t_list *lst)
 	t_list	*	i;
 
 	i = lst;
-	while (i->next->next != NULL)
+	while (i->next != NULL)
 	{
 		i = i->next;
 	}
-	// terminar
+	return (i);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kams <kams@student.42.fr>                  +#+  +:+       +#+         #
+#    By: kmota <kmota@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/02 15:58:48 by kmota             #+#    #+#              #
-#    Updated: 2026/11/04 20:52:55 by kams             ###   ########.fr        #
+#    Updated: 2026/11/06 13:02:34 by kmota            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,7 @@ re: fclean all
 test: all
 	$(CC) $(CFLAGS) main.c $(NAME) -o test -lbsd
 	./test
+
+bonus: all
 
 .PHONY: all clean fclean re test
