@@ -17,6 +17,10 @@ t_list *ft_lstlast(t_list *lst)
 	t_list	*	i;
 
 	i = lst;
+	if (lst == NULL)
+	{
+		return (NULL);
+	}
 	while (i->next != NULL)
 	{
 		i = i->next;

@@ -15,7 +15,7 @@
 unsigned int	ft_lstsize(t_list *lst)
 {
 	t_list * i;
-	int counter;
+	unsigned int counter;
 
 	i = lst;
 	counter = 0;
@@ -24,4 +24,5 @@ unsigned int	ft_lstsize(t_list *lst)
 		counter++;
 		i = i->next;
 	}
+	return (counter);
 }
