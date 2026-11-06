@@ -115,10 +115,27 @@ int	main(void)
 	printf("ft_strlen(' ') = %ld | strlen (' ') = %ld\n", ft_strlen(" "), strlen(" "));
 	
 	printf("---------ft_strlcpy------------\n");
-	printf("ft_strlcpy(dst[5], \"tes\", 5) = %ld | strlcpy(dst[5], \"tes\", 5) = %ld\n", ft_strlcpy((char[5]){}, "tes", 5), strlcpy((char[5]), "tes", 5));
-	printf("ft_strlcpy(dst[4], \"testing\", 4) = %ld | strlcpy(dst[4], \"testing\", 4) = %ld\n", ft_strlcpy((char[4]){}, "testing", 4), strlcpy((char[4]){}, "testing", 4)); 
-	printf("ft_strlcpy(dst[5], \"\", 5) = %ld | strlcpy(dst[5], \"\", 5) = %ld\n", ft_strlcpy((char[5]){}, "", 5), strlcpy((char[5]){}, "", 5));
+	
+	char dest[20];
+	char ftdest[20];
+    unsigned int ret;
+	unsigned int ftret;
 
+    ret = ft_strlcpy(dest, "Hello", 20);
+    printf("Teste 1: %s | Retorno: %u\n", dest, ret);
+	ftret = strlcpy(ftdest, "Hello", 20);
+    printf("Teste 1: %s | Retorno: %u\n", ftdest, ftret);
+
+    ret = ft_strlcpy(dest, "World", 3);
+    printf("Teste 2: %s | Retorno: %u\n", dest, ret);
+	ftret = strlcpy(ftdest, "World", 3);
+    printf("Teste 2: %s | Retorno: %u\n", ftdest, ftret);
+
+    ret = ft_strlcpy(dest, "42", 0);
+    printf("Teste 3: %s | Retorno: %u\n", dest, ret);
+	ftret = strlcpy(ftdest, "42", 0);
+    printf("Teste 3: %s | Retorno: %u\n", ftdest, ftret);
+	
 	printf("---------ft_strlcat------------\n");
 	printf("ft_strlcat(\"hel\", \"lo\", 6) = %ld | strlcat(\"hel\", \"lo\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "lo", 6), strlcat((char[6]){"hel"}, "lo", 6));
 	printf("ft_strlcat(\"hel\", \"world\", 6) = %ld | strlcat(\"hel\", \"world\", 6) = %ld\n", ft_strlcat((char[6]){"hel"}, "world", 6), strlcat((char[6]){"hel"}, "world", 6)); 

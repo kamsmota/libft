@@ -6,45 +6,68 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:32:31 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 14:38:10 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/06 17:19:19 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_numlen(int n)
+{
+	int	len;
+	long nb;
+
+	len = 0;
+	nb = n;
+	if (nb <= 0)
+	{
+		len++;
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		len++;
+		nb /= 10;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*ptr;
-	int	d;
 	int	i;
-	int	nb;
-	int	div;
+	long	div;
+	long	nb;
 
-	d = 0; //contar casa decimal
-	nb = n;
-	while (nb > 0)
+	ptr = malloc((ft_numlen(n) + 1) * sizeof(char));
+	if (!ptr)
 	{
-		nb /= 10;
-		d++;
+		return NULL;
 	}
-	ptr = malloc((d + 1) * sizeof(char));
 	div = 1;
 	i = 0;
-	if (n < 10)
+	nb = n;
+	if (nb < 0)
 	{
-		ptr[i] = (n + '0');
+		nb = nb * (-1);
+		ptr[i] = '-';
+		i++;
+	}
+	if (nb < 10)
+	{
+		ptr[i] = (nb + '0');
 		i++;
 	}
 	else
 	{
-		while ((n / div) > 1)
+		while ((nb / div) > 9)
 		{
 			div *= 10;
 		}
 		while (div > 0)
 		{
-			ptr[i] = ((n / div) + '0');
-			n = n % div;
+			ptr[i] = ((nb / div) + '0');
+			nb = nb % div;
 			div /= 10;
 			i++;
 		}
@@ -52,3 +75,20 @@ char	*ft_itoa(int n)
 	ptr[i] = '\0';
 	return (ptr);
 }
+// int main()
+// {
+// 	printf("---------ft_itoa----------\n");
+// 	char *res = ft_itoa(-9);
+//     printf("%s\n", res);
+//     free(res);
+	
+// 	int size;
+ 
+//  	size = malloc_usable_size(ft_itoa(-5859));
+//  	if (size == 6)
+//  		printf("sucess");
+// 	else 
+// 	{
+// 		printf("error");	
+// 	}
+// 
