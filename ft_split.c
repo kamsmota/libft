@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:28 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 14:35:57 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/06 17:58:23 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
 		len = strsize - start;
 	}
 	str = malloc((len + 1) * sizeof(char));
-	if (str == NULL)
+	if (!str)
 	{
-		return (0);
+		return (NULL);
 	}
 	i = 0;
 	while (i < len && start + i < strsize)
@@ -100,7 +100,9 @@ char	**ft_split(char const *s, char c)
 	}
 	str = malloc((ft_chrcstr(s, c) + 1) * sizeof(char *)); //quantidade de palavras + nulo
 	if (!str)
-		return (0);
+	{
+		return (NULL);	
+	}
 	i = 0;
 	j = 0;
 	while (s[i])
