@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 14:34:12 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 14:40:16 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/06 17:49:18 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,31 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	int	div;
 	char	c;
+	long nb;
 
-	if (n < 10)
+	nb = n;
+	if (nb < 0)
 	{
-		c = n + '0';
+		write(fd, "-", 1);
+		nb = -nb;
+	}
+	if (nb < 10)
+	{
+		c = nb + '0';
 		write(fd, &c, 1);
 	}
 	else
 	{
 		div = 1;
-		while ((n / div) > 9)
+		while ((nb / div) > 9)
 		{
 			div *= 10;
 		}
 		while (div > 0)
 		{
-			c = (n / div) + '0';
+			c = (nb / div) + '0';
 			write(fd, &c, 1);
-			n = n % div;
+			nb = nb % div;
 			div /= 10;
 		}
 	}
