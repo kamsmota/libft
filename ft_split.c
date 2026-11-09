@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:39:22 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 16:50:59 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/09 17:43:05 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,6 @@ static	size_t	ft_chrcstr(char const *s, char c)
 	}
 	return (counter);
 }
-
-// size_t	ft_strlen(const char *s)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
 
 // function to copy the string to te memory allocated (ft_substr modified)
 static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
