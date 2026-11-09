@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:56:55 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 18:44:32 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/09 13:07:20 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isprint(int c)
 {
-	if ((unsigned char)c >= 32 && (unsigned char)c <= 126)
+	if (c >= 32 && c <= 126)
 	{
-		return (1);
+		return (c);
 	}
 	return (0);
 }

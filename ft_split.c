@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:28 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/06 20:28:28 by kams             ###   ########.fr       */
+/*   Updated: 2026/11/09 16:32:44 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static	size_t	ft_chrcstr(char const *s, char c)
 
 	i = 0;
 	counter = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		if (s[i] != (unsigned char)c)
+		if (s[i] != c)
 		{
 			counter++;
-			while (s[i] != (unsigned char)c)
+			while ((s[i] != '\0') && s[i] != c)
 			{
 				i++;
 			}
@@ -37,6 +37,18 @@ static	size_t	ft_chrcstr(char const *s, char c)
 	}
 	return (counter);
 }
+
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 // function to copy the string to te memory allocated (ft_substr modified)
 static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
@@ -64,10 +76,13 @@ static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	}
 	i = 0;
-	while (i < len && start + i < strsize)
+	while (s[i])
 	{
-		str[i] = s[start + i];
-		i++;
+		while (i < len && start + i < strsize)
+		{
+			str[i] = s[start + i];
+			i++;
+		}
 	}
 	str[i] = '\0';
 	return (str);
@@ -79,7 +94,7 @@ static	void	frwords(char **str, size_t count)
 	size_t	i;
 
 	i = 0;
-	while (i < count)
+	while (str[i] && i < count)
 	{
 		free(str[i]);
 		i++;
@@ -94,21 +109,43 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	start;
 
-	if (!s) //string vazia
+	if (!s) 
 	{
 		return (0);
 	}
 	str = malloc((ft_chrcstr(s, c) + 1) * sizeof(char *)); //quantidade de palavras + nulo
 	if (!str)
 	{
-		return (NULL);	
+		return (NULL);
 	}
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		while (s[i] && s[i] == c) //caractere igual ao delimitador
 		{
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 	{
+// 		i++;
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
+// 	}
+// 	return (i);
+// }
 			i++;
 		}
 		start = i; // fim do delimitador e comeco da palavra
@@ -130,3 +167,71 @@ char	**ft_split(char const *s, char c)
 	str[j] = NULL;
 	return (str);
 }
+
+// int main ()
+// {
+// 	char **teste;
+// 	int i;
+	
+// 	i = 0;
+// 	teste = ft_split("hello world", ' ');
+// 	while (teste[i])
+// 	{
+// 		printf("%s", teste[i]);
+// 		i++;
+// 	}
+// 	free(teste);
+	
+	// teste = ft_split("", ' ');
+	// printf("%s", teste);
+	// free(teste);
+	
+	// teste = ft_split("hello", ' ');
+	// printf("%s", teste);
+	// free(teste);
+
+	// teste = ft_split("     ", ' ');
+	// printf("%s", teste);
+	// free(teste);
+	
+	// teste = ft_split("  hello", ' ');
+	// printf("%s", teste);
+	// free(teste);
+	
+	// teste = ft_split("hello  ", ' ');
+	// printf("%s", teste);
+	// free(teste);
+	
+	// teste = ft_split("hello   world", ' ');
+	// printf("%s", teste);
+	// free(teste);
+	
+	// teste = ft_split("hello world test", ' ');
+	// printf("%s", teste);
+	// free(teste);
+		
+	// teste =  ft_split("a,b,c,d", ',');
+	// printf("%s", teste);
+	// free(teste);
+	
+	// teste = ft_split(",,,", ',');
+	// printf("%s", teste);
+	// free(teste);
+
+	// teste = ft_split(",hello,world,", ',');
+	// printf("%s", teste);
+	// free(teste);
+// int main ()
+// {
+// 	char **teste;
+// 	int i;
+	
+// 	i = 0;
+// 	teste = ft_split("hello world", ' ');
+// 	while (teste[i])
+// 	{
+// 		printf("%s", teste[i]);
+// 		i++;
+// 	}
+// 	free(teste);
+	// }

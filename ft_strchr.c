@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:32 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:40:06 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/09 13:31:35 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
-
+	
 	i = 0;
+	if (s == NULL)
+	{
+		i = ft_strlen(s);
+		return ((char *) &s[i]);
+	}
 	while (s[i])
 	{
 		if (s[i] == (unsigned char)c)
@@ -25,7 +30,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 	{
 		return ((char *) &s[i]);
 	}

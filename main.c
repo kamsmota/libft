@@ -68,6 +68,8 @@ int	main(void)
 	memcpy(buf_lib, "Hello", sizeof("Hello"));
 	ft_memcpy(buf_ft, "ABCDE", 5);
 	memcpy(buf_lib, "ABCDE", 5);
+	dup_ft = ft_strtrim("hello...", ".");
+	printf("ft_strtrim('hello...', '.'): %s\n", 
 	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('Hello', 'ABCDE', 5) = %s\n", buf_ft, buf_lib);
 
 	printf("---------ft_memccpy------------\n");
@@ -79,6 +81,8 @@ int	main(void)
 
 	char str21[] = "Hello";
 	char str22[] = "Hello";
+	dup_ft = ft_strtrim("hello...", ".");
+	printf("ft_strtrim('hello...', '.'): %s\n", 
 	ft_memccpy(str21, "abcde", 'd', 5);
 	memccpy(str22, "abcde", 'd', 5);
 	printf("ft_memccpy('Hello', 'abcde', 'x', 5) = %s | memccpy('Hello', 'abcde', 'x', 5) = %s\n", str21, str22);
@@ -94,7 +98,9 @@ int	main(void)
 	memcpy(buf_lib, "ABCDE", sizeof("ABCDE"));
 	ft_memmove(buf_ft, buf_ft + 2, 3);
 	memmove(buf_lib, buf_lib + 2, 3);
-	printf("ft_memmove(str, str + 2, 3) = %s | memmove(str, str + 2, 3) = %s\n", buf_ft, buf_lib);
+	printf("ft_memmove(str, str + 2, 3) = %s | m
+	dup_ft = ft_strtrim("hello...", ".");
+	printf("ft_strtrim('hello...', '.'): %s\n", emmove(str, str + 2, 3) = %s\n", buf_ft, buf_lib);
 
 	printf("---------ft_memchr------------\n");
 	printf("ft_memchr('hello', 'e', 3) = %p | memchr ('hello','e', 3) = %p\n", ft_memchr("hello", 'e', 3), memchr("hello", 'e', 3));

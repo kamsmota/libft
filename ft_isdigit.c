@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:56:49 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 18:44:38 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/09 13:06:51 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isdigit(int c)
 {
-	if ((unsigned char)c >= '0' && (unsigned char)c <= '9')
+	if (c >= '0' && c <= '9')
 	{
-		return (1);
+		return (c);
 	}
 	return (0);
 }

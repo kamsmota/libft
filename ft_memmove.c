@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:19 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:32:08 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/09 13:01:41 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
+	if (!src && !dest)
+	{
+		 return (0);
+	}
+	if (n == 0 || (dest == src))
+	{
+		 return (dest);
+	}
 	if (d > s) //if the string already has a index
 	{
 		i = n;
