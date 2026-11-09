@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:32:31 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/06 17:19:19 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/09 12:41:14 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_numlen(int n)
 {
 	int	len;
-	long nb;
+	long	nb;
 
 	len = 0;
 	nb = n;
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 	ptr = malloc((ft_numlen(n) + 1) * sizeof(char));
 	if (!ptr)
 	{
-		return NULL;
+		return (NULL);
 	}
 	div = 1;
 	i = 0;
@@ -75,20 +75,3 @@ char	*ft_itoa(int n)
 	ptr[i] = '\0';
 	return (ptr);
 }
-// int main()
-// {
-// 	printf("---------ft_itoa----------\n");
-// 	char *res = ft_itoa(-9);
-//     printf("%s\n", res);
-//     free(res);
-	
-// 	int size;
- 
-//  	size = malloc_usable_size(ft_itoa(-5859));
-//  	if (size == 6)
-//  		printf("sucess");
-// 	else 
-// 	{
-// 		printf("error");	
-// 	}
-// 
