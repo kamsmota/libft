@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/02 15:57:28 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 16:32:44 by kmota            ###   ########.fr       */
+/*   Created: 2026/11/09 16:39:22 by kmota             #+#    #+#             */
+/*   Updated: 2026/11/09 16:50:59 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// function to count words (ft_strchr modified)
 static	size_t	ft_chrcstr(char const *s, char c)
 {
 	size_t	i;
@@ -22,17 +21,17 @@ static	size_t	ft_chrcstr(char const *s, char c)
 	counter = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] != c)
+		if (s[i] == c)
 		{
-			counter++;
-			while ((s[i] != '\0') && s[i] != c)
-			{
-				i++;
-			}
+			i++;
 		}
 		else
 		{
-			i++;
+			counter++;
+			while (s[i] && s[i] != c)
+			{
+				i++;
+			}
 		}
 	}
 	return (counter);
@@ -76,13 +75,10 @@ static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	}
 	i = 0;
-	while (s[i])
+	while (i < len)
 	{
-		while (i < len && start + i < strsize)
-		{
-			str[i] = s[start + i];
-			i++;
-		}
+		str[i] = s[start + i];
+		i++;
 	}
 	str[i] = '\0';
 	return (str);
@@ -94,7 +90,7 @@ static	void	frwords(char **str, size_t count)
 	size_t	i;
 
 	i = 0;
-	while (str[i] && i < count)
+	while (i < count && str[i])
 	{
 		free(str[i]);
 		i++;
@@ -124,28 +120,6 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] && s[i] == c) //caractere igual ao delimitador
 		{
-// size_t	ft_strlen(const char *s)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		i++;
-// size_t	ft_strlen(const char *s)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
-// 	}
-// 	return (i);
-// }
 			i++;
 		}
 		start = i; // fim do delimitador e comeco da palavra
@@ -167,71 +141,3 @@ char	**ft_split(char const *s, char c)
 	str[j] = NULL;
 	return (str);
 }
-
-// int main ()
-// {
-// 	char **teste;
-// 	int i;
-	
-// 	i = 0;
-// 	teste = ft_split("hello world", ' ');
-// 	while (teste[i])
-// 	{
-// 		printf("%s", teste[i]);
-// 		i++;
-// 	}
-// 	free(teste);
-	
-	// teste = ft_split("", ' ');
-	// printf("%s", teste);
-	// free(teste);
-	
-	// teste = ft_split("hello", ' ');
-	// printf("%s", teste);
-	// free(teste);
-
-	// teste = ft_split("     ", ' ');
-	// printf("%s", teste);
-	// free(teste);
-	
-	// teste = ft_split("  hello", ' ');
-	// printf("%s", teste);
-	// free(teste);
-	
-	// teste = ft_split("hello  ", ' ');
-	// printf("%s", teste);
-	// free(teste);
-	
-	// teste = ft_split("hello   world", ' ');
-	// printf("%s", teste);
-	// free(teste);
-	
-	// teste = ft_split("hello world test", ' ');
-	// printf("%s", teste);
-	// free(teste);
-		
-	// teste =  ft_split("a,b,c,d", ',');
-	// printf("%s", teste);
-	// free(teste);
-	
-	// teste = ft_split(",,,", ',');
-	// printf("%s", teste);
-	// free(teste);
-
-	// teste = ft_split(",hello,world,", ',');
-	// printf("%s", teste);
-	// free(teste);
-// int main ()
-// {
-// 	char **teste;
-// 	int i;
-	
-// 	i = 0;
-// 	teste = ft_split("hello world", ' ');
-// 	while (teste[i])
-// 	{
-// 		printf("%s", teste[i]);
-// 		i++;
-// 	}
-// 	free(teste);
-	// }
