@@ -68,9 +68,6 @@ int	main(void)
 	memcpy(buf_lib, "Hello", sizeof("Hello"));
 	ft_memcpy(buf_ft, "ABCDE", 5);
 	memcpy(buf_lib, "ABCDE", 5);
-	dup_ft = ft_strtrim("hello...", ".");
-	printf("ft_strtrim('hello...', '.'): %s\n", 
-	printf("ft_memcpy('Hello', 'ABCDE', 5) = %s | memcpy('Hello', 'ABCDE', 5) = %s\n", buf_ft, buf_lib);
 
 	printf("---------ft_memccpy------------\n");
 	char str19[] = "Hello";
@@ -79,13 +76,6 @@ int	main(void)
 	memccpy(str20, "abcde", 'c', 5);
 	printf("ft_memccpy('Hello', 'abcde', 'c', 5) = %s | memccpy('Hello', 'abcde', 'c', 5) = %s\n", str19, str20);
 
-	char str21[] = "Hello";
-	char str22[] = "Hello";
-	dup_ft = ft_strtrim("hello...", ".");
-	printf("ft_strtrim('hello...', '.'): %s\n", 
-	ft_memccpy(str21, "abcde", 'd', 5);
-	memccpy(str22, "abcde", 'd', 5);
-	printf("ft_memccpy('Hello', 'abcde', 'x', 5) = %s | memccpy('Hello', 'abcde', 'x', 5) = %s\n", str21, str22);
 	
 	printf("---------ft_memmove------------\n");
 	memcpy(buf_ft, "ABCDE", sizeof("ABCDE"));
@@ -94,13 +84,6 @@ int	main(void)
 	memmove(buf_lib + 2, buf_lib, 3);
 	printf("ft_memmove(str + 2, str, 3) = %s | memmove(str + 2, str, 3) = %s\n", buf_ft, buf_lib);
 
-	memcpy(buf_ft, "ABCDE", sizeof("ABCDE"));
-	memcpy(buf_lib, "ABCDE", sizeof("ABCDE"));
-	ft_memmove(buf_ft, buf_ft + 2, 3);
-	memmove(buf_lib, buf_lib + 2, 3);
-	printf("ft_memmove(str, str + 2, 3) = %s | m
-	dup_ft = ft_strtrim("hello...", ".");
-	printf("ft_strtrim('hello...', '.'): %s\n", emmove(str, str + 2, 3) = %s\n", buf_ft, buf_lib);
 
 	printf("---------ft_memchr------------\n");
 	printf("ft_memchr('hello', 'e', 3) = %p | memchr ('hello','e', 3) = %p\n", ft_memchr("hello", 'e', 3), memchr("hello", 'e', 3));
@@ -179,7 +162,10 @@ int	main(void)
 	char *dup4 = strdup("");
 	printf("ft_strdup(\"\") = \"%s\" | strdup(\"\") = \"%s\"\n", dup3, dup4);
 	free(dup3);
-	free(dup4);
+	free(dup4);memcpy(buf_ft, "ABCDE", sizeof("ABCDE"));
+	memcpy(buf_lib, "ABCDE", sizeof("ABCDE"));
+	ft_memmove(buf_ft, buf_ft + 2, 3);
+	memmove(buf_lib, buf_lib + 2, 3);
 
 	char *dup5 = ft_strdup("teste");
 	char *dup6 = strdup("teste");
