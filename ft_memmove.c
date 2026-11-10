@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:19 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/10 14:29:35 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 16:45:16 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = 0;
-		while (i < n)
+		while (i < n) // verificar memcpy
 		{
 			d[i] = s[i];
 			i++;

@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:39:22 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/10 15:34:52 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 17:07:02 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static	size_t	ft_chrcstr(char const *s, char c)
 	return (counter);
 }
 
-static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
+static	char	*ft_sstr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	strsize;
@@ -115,8 +115,8 @@ char	**ft_split(char const *s, char c)
 		}
 		if (i > start)
 		{
-			str[j] = ft_sbstr(s, start, i - start);
-			if (!str[j])
+			str[j] = ft_sstr(s, start, i - start);
+			if (!str[j]) // if any allocation fails
 			{
 				frwords(str, j);
 				return (0);
