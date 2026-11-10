@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 13:11:29 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 18:07:57 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 15:26:17 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	* i;
-	
+	t_list	*i;
+
 	i = *lst;
 	if (*lst == NULL)
 	{

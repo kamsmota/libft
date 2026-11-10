@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:41 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:40:27 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 14:30:23 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	}
 	ft_memcpy(str, s1, lenone);
-	ft_memcpy(str + lenone, s2, lentwo); //str + lenone so it starts in the lenone index
+	ft_memcpy(str + lenone, s2, lentwo);
 	str[lenone + lentwo] = '\0';
 	return (str);
 }

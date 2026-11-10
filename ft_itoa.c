@@ -6,15 +6,15 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:32:31 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 12:41:14 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 14:32:05 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numlen(int n)
+static int	ft_numlen(int n)
 {
-	int	len;
+	int		len;
 	long	nb;
 
 	len = 0;
@@ -35,7 +35,7 @@ int	ft_numlen(int n)
 char	*ft_itoa(int n)
 {
 	char	*ptr;
-	int	i;
+	int		i;
 	long	div;
 	long	nb;
 

@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:24 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:33:01 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 14:29:48 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*str;
 
 	i = 0;

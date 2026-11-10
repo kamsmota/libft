@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:15 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 12:56:13 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 16:44:09 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*dst;
 	unsigned char	*sr;
 

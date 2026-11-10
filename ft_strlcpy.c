@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:53 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/06 17:43:26 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 14:31:16 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 			dst[i] = src[i];
 			i++;
 		}
-	dst[i] = '\0';
+		dst[i] = '\0';
 	}
 	return (ft_strlen(src));
 }
-
