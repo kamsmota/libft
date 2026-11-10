@@ -139,14 +139,10 @@ typedef struct s_list
 
 ### Uso de IA
 
-> ⚠️ Ajuste esta seção para refletir exatamente como você utilizou IA no projeto.
-
 A IA foi utilizada de forma pontual e como apoio ao aprendizado, **não** para gerar o código das funções:
 
 - **Documentação:** auxílio na elaboração e estruturação deste `README.md`.
 - **Compreensão de conceitos:** explicações sobre o comportamento esperado de algumas funções da libc e sobre casos limite.
 - **Revisão:** sugestões de casos de teste e de pontos de atenção (vazamentos de memória, tratamento de `NULL`).
 
-Todo o código-fonte foi escrito, testado e compreendido por mim.
-
-> Em constante atualização.
+Use cuidadosamente!
