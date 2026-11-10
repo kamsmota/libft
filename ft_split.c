@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:39:22 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 17:43:05 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 15:34:52 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static	size_t	ft_chrcstr(char const *s, char c)
 	return (counter);
 }
 
-// function to copy the string to te memory allocated (ft_substr modified)
 static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
@@ -72,7 +71,6 @@ static	char	*ft_sbstr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-// function to free the memory
 static	void	frwords(char **str, size_t count)
 {
 	size_t	i;
@@ -93,11 +91,11 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	start;
 
-	if (!s) 
+	if (!s)
 	{
 		return (0);
 	}
-	str = malloc((ft_chrcstr(s, c) + 1) * sizeof(char *)); //quantidade de palavras + nulo
+	str = malloc((ft_chrcstr(s, c) + 1) * sizeof(char *));
 	if (!str)
 	{
 		return (NULL);
@@ -106,19 +104,19 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] && s[i] == c) //caractere igual ao delimitador
+		while (s[i] && s[i] == c)
 		{
 			i++;
 		}
-		start = i; // fim do delimitador e comeco da palavra
+		start = i;
 		while (s[i] && s[i] != c)
 		{
 			i++;
 		}
-		if (i > start) // verify if it has advanced at least one character 
+		if (i > start)
 		{
-			str[j] = ft_sbstr(s, start, i - start); // the function receives the "end" of the word it've found - the start of that
-			if (!str[j]) // se a string n receber nada
+			str[j] = ft_sbstr(s, start, i - start);
+			if (!str[j])
 			{
 				frwords(str, j);
 				return (0);

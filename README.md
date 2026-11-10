@@ -1,18 +1,19 @@
+*This project has been created as part of the 42 curriculum by kamsmota.*
 
 # Libft Project
 
 ![completed](https://img.shields.io/badge/completed-0a4518)
 
-# <h3>📚 ~ Languages Used:</h4>
+# <h3>Languages Used:</h4>
 
 - `C`
 - `Makefile`
 
-# <h3>🎯 ~ Objective:</h4>
+# <h3>Objective:</h4>
 
 <p>Create my own libc library, to be used in future projects and for educational purposes.</p>
 
-# <h3>📖 ~ Description</h4>
+# <h3>Description</h4>
 
 **Libft** is the first project in the 42 curriculum. It consists of rewriting, in C, a set of functions from the standard library (`libc`), along with additional utility functions and linked list manipulation functions. The result is a static library (`libft.a`) that will be reused in all subsequent projects.
 
@@ -24,7 +25,7 @@ Project overview:
 
 This project reinforces concepts such as memory management, pointers, string manipulation, edge case handling, and code organization using `Makefile`.
 
-# <h3>⚙️ ~ Instructions</h4>
+# <h3>Instructions</h4>
 
 ### Requirements
 

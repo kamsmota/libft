@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:58:22 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/02 16:18:30 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 14:31:31 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	begin;
-	int	end;
-	int	i;
+	int		begin;
+	int		end;
+	int		i;
 	char	*str;
 
 	begin = 0;

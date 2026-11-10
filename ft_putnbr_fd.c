@@ -6,7 +6,7 @@
 /*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/05 14:34:12 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 12:41:35 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 14:32:13 by kmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	div;
+	int		div;
 	char	c;
 	long	nb;
 
