@@ -21,7 +21,7 @@ Project overview:
 
 - **Part 1 - Libc Functions:** Reimplementation of well-known functions, maintaining the same behavior as the original prototypes, but using the `ft_` prefix.
 - **Part 2 - Additional Functions:** Utility functions that do not exist in libc or exist in a different form (string manipulation, conversions, and writing to file descriptors).
-- **Bonus - Linked Lists:** Functions for creating and manipulating lists using the `t_list` structure.
+- **Part - Linked Lists:** Functions for creating and manipulating lists using the `t_list` structure.
 
 This project reinforces concepts such as memory management, pointers, string manipulation, edge case handling, and code organization using `Makefile`.
 
@@ -107,7 +107,7 @@ int	main(void)
 | `ft_putendl_fd` | Writes a string followed by a newline to a file descriptor. |
 | `ft_putnbr_fd` | Writes an integer to a file descriptor. |
 
-### Bonus - Linked Lists
+### Part 3 - Linked Lists
 
 ```c
 typedef struct s_list
