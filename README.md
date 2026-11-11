@@ -38,7 +38,6 @@ From the repository root:
 
 ```bash
 make          # compiles the library and generates libft.a
-make bonus    # also compiles the bonus functions (linked lists)
 make clean    # removes object files (.o)
 make fclean   # removes object files and libft.a
 make re       # recompiles everything from scratch
