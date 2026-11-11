@@ -6,7 +6,7 @@
 #    By: kams <kams@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/02 15:58:48 by kmota             #+#    #+#              #
-#    Updated: 2026/11/11 14:02:32 by kams             ###   ########.fr        #
+#    Updated: 2026/11/11 14:10:00 by kams             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,4 @@ fclean: clean
 
 re: fclean all
 
-test: all
-	$(CC) $(CFLAGS) $(NAME) -o test
-	./test
-
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
