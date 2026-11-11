@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:19 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/10 16:45:16 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 22:45:31 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (0);
 	}
 	if (n == 0 || (dest == src))
-	{
 		return (dest);
-	}
 	if (d > s)
 	{
 		i = n;
@@ -38,13 +36,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	else
-	{
-		i = 0;
-		while (i < n) // verificar memcpy
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
+		ft_memcpy(d, s, n);
 	return (dest);
 }

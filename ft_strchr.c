@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:32 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/10 14:30:06 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/11 13:42:56 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (s == NULL)
-	{
-		i = ft_strlen(s);
-		return ((char *) &s[i]);
-	}
 	while (s[i])
 	{
 		if (s[i] == (unsigned char)c)

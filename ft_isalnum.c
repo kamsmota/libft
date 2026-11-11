@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 22:32:18 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 11:40:25 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/11 13:37:17 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 int	ft_isalnum(int c)
 {
-	if (((unsigned char)c >= '0' && (unsigned char)c <= '9')
-		|| ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
-		|| ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'));
 }

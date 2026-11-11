@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:32:31 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/10 14:32:05 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/10 22:48:54 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,42 +35,27 @@ static int	ft_numlen(int n)
 char	*ft_itoa(int n)
 {
 	char	*ptr;
-	int		i;
-	long	div;
 	long	nb;
+	long	div;
+	int		i;
 
-	ptr = malloc((ft_numlen(n) + 1) * sizeof(char));
-	if (!ptr)
-	{
-		return (NULL);
-	}
-	div = 1;
-	i = 0;
 	nb = n;
+	i = (nb < 0);
 	if (nb < 0)
+		nb = -nb;
+	div = 1;
+	while (nb / div > 9)
+		div *= 10;
+	ptr = malloc(ft_numlen(n) + 1);
+	if (!ptr)
+		return (NULL);
+	if (i)
+		ptr[0] = '-';
+	while (div)
 	{
-		nb = nb * (-1);
-		ptr[i] = '-';
-		i++;
-	}
-	if (nb < 10)
-	{
-		ptr[i] = (nb + '0');
-		i++;
-	}
-	else
-	{
-		while ((nb / div) > 9)
-		{
-			div *= 10;
-		}
-		while (div > 0)
-		{
-			ptr[i] = ((nb / div) + '0');
-			nb = nb % div;
-			div /= 10;
-			i++;
-		}
+		ptr[i++] = nb / div + '0';
+		nb %= div;
+		div /= 10;
 	}
 	ptr[i] = '\0';
 	return (ptr);
