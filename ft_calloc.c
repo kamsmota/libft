@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:56:14 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/11 13:42:15 by kams             ###   ########.fr       */
+/*   Updated: 2026/11/11 22:07:07 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_calloc(size_t n, size_t size)
 
 	if (size != 0 && n > __SIZE_MAX__ / size)
 		return (NULL);
+	if (n == 0 || size == 0)
+		return (malloc(1));
 	str = malloc(n * size);
 	if (str == NULL)
 		return (0);
