@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:57:41 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/10 14:30:23 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/11 16:42:49 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	lentwo;
 	char	*str;
 
+	if (!s1 || !s2)
+	{
+		return (0);
+	}
 	lenone = ft_strlen(s1);
 	lentwo = ft_strlen(s2);
 	str = malloc ((lenone + lentwo + 1) * sizeof(char));

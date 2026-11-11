@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:39:22 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/11 13:55:36 by kams             ###   ########.fr       */
+/*   Updated: 2026/11/11 16:48:40 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static	size_t	ft_chrcstr(char const *s, char c)
 	return (counter);
 }
 
-static	void	frwords(char **str, size_t count)
+static	void	ft_frwords(char **str, size_t count)
 {
 	size_t	i;
 
@@ -54,9 +54,7 @@ static void	ft_putwor(char **str, char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c)
-		{
 			i++;
-		}
 		if (!s[i])
 			break ;
 		start = i;
@@ -66,6 +64,7 @@ static void	ft_putwor(char **str, char const *s, char c)
 		}
 		str[j++] = ft_substr(s, start, i - start);
 	}
+	str[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
@@ -86,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (!str[i])
 		{
-			frwords(str, size);
+			ft_frwords(str, size);
 			return (NULL);
 		}
 		i++;

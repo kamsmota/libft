@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:58:36 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 12:40:28 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/11 16:37:02 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,9 @@
 
 int	ft_toupper(int c)
 {
-	if ((unsigned char)c == '\0')
+	if (c >= 'a' && c <= 'z')
 	{
-		return (0);
+		c -= 32;
 	}
-	if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
-	{
-		return ((unsigned char) c - 32);
-	}
-	if (c < 128)
-	{
-		return ((char)c);
-	}
-	return ((unsigned char)c);
+	return (c);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 13:21:13 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/09 17:46:24 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/11 16:25:43 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
+	if (!lst || !del)
 	{
 		return ;
 	}

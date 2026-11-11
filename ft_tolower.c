@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmota <kmota@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:58:32 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/05 17:25:39 by kmota            ###   ########.fr       */
+/*   Updated: 2026/11/11 16:38:38 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 int	ft_tolower(int c)
 {
-	if ((unsigned char)c == '\0')
+	if (c >= 'A' && c <= 'Z')
 	{
-		return (0);
-	}
-	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
-	{
-		return (c + 32);
+		c += 32;
 	}
 	return (c);
 }
