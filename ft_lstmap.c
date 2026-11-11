@@ -6,7 +6,7 @@
 /*   By: kams <kams@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 18:23:12 by kmota             #+#    #+#             */
-/*   Updated: 2026/11/11 14:06:58 by kams             ###   ########.fr       */
+/*   Updated: 2026/11/11 14:12:28 by kams             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;
-	void 	*content;
+	void	*content;
 
 	new_list = NULL;
 	if (!f || !del)
